@@ -1,1 +1,10 @@
-<p>gestionare-oferte works!</p>
+<p>Oferte RoTravel</p>
+
+<ng-container *ngFor="let oferta of oferte">
+    <div>{{oferta.numeOferta}}</div>
+    <div>{{oferta.pret}}</div>
+    <div>{{oferta.imagine}}</div>
+    <div>{{oferta.proprietar}}</div>
+    <div>{{oferta.descriere}}</div>
+    <div>{{oferta.disponibilitate}}</div>
+</ng-container>
