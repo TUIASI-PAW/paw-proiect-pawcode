@@ -1,0 +1,21 @@
+
+.bg1 { 
+    margin-top: 40px;
+  
+  }
+  .img-fluid {
+    width: 200px !important;
+    height: 15vh !important;
+    margin-top:10px;
+    margin-left: 200px;
+  }
+ .menu{
+   margin-left: 50px;
+ }
+ .asezare{
+   display: flex;
+   flex-direction: row;
+ }
+ .dist{
+   margin-left: 350px;
+ }
