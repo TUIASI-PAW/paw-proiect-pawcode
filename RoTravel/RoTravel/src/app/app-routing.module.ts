@@ -10,6 +10,15 @@ const routes: Routes = [
   {
     path:'oferte',
     loadChildren:() => import('./oferte/oferte.module').then(mod => mod.OferteModule)
+  },
+  {
+    path:'utilizatori',
+    redirectTo:'utilizatori',
+    pathMatch:'full'
+  },
+  {
+    path:'utilizatori',
+    loadChildren:() => import('./utilizatori/utilizatori.module').then(mod => mod.UtilizatoriModule)
   }
 ];
 
