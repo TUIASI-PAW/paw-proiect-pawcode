@@ -24,7 +24,21 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+
+              "src/styles.css",
+              {
+                "input": "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+              },
+              {
+                "input": "./node_modules/font-awesome/css/font-awesome.min.css"
+              },
+              {
+                "input": "./node_modules/font-awesome/css/font-awesome.css"
+              },
+              {
+                "input": "./node_modules/bootstrap/dist/css/bootstrap.css"
+              }
+              
             ],
             "scripts": []
           },
