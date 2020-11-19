@@ -1,0 +1,14 @@
+.bg { 
+    /* The image used */
+    background-image: url('/assets/images/travel.jpg');
+  
+    /* Full height */
+    height: 100vh !important; 
+
+     margin-top:30px;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+ 
