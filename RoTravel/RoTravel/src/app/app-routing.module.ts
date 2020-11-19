@@ -19,6 +19,17 @@ const routes: Routes = [
   {
     path:'utilizatori',
     loadChildren:() => import('./utilizatori/utilizatori.module').then(mod => mod.UtilizatoriModule)
+  },
+  {
+    path:'',
+    redirectTo:'home',
+    pathMatch:'full'
+  },
+  {
+    path:'home',
+    component:HomeComponent,
+    pathMatch:'full'
+
   }
 ];
 
