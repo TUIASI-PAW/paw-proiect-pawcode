@@ -1,1 +1,80 @@
-<p>adaugare-utilizatori works!</p>
+  <div class = "div-inregistrare">
+    <div  class = "inregistrare">
+        <div class = "view">
+            <div>
+                <h1>Înregistrare</h1>
+            </div>
+            <br/>
+            <div class = "nume">
+                <div class = "row">
+                    <label class = "col-sm-12 col-form-label">Nume</label>
+                    <div class = "col-sm-12">
+                    <input type = "text" formControlName = "nume" class = "form-control"/>
+                    </div>
+                </div>
+                <div class = "row">
+                    <label class = "col-sm-12 col-form-label">Prenume</label>
+                    <div class = "col-sm-12">
+                    <input type = "text" formControlName = "prenume" class = "form-control"/>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <div class = "nume">
+                <div class = "row">
+                    <div class = "row">
+                        <i class="fa fa-envelope"></i>
+                        <label class = "form-label" style= "margin-left: 40px;">Email</label>
+                    </div>
+                    <div class = "col-sm-12">
+                    <input type = "email" formControlName = "email" class = "form-control" style = "width: 268px;"/>
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class = "row">
+                        <i class="fa fa-key"></i>
+                        <label class = "form-label" style= "margin-left: 40px;">Parola</label>
+                    </div>
+                    <div class = "col-sm-12">
+                    <input type = "password" formControlName = "parola" class = "form-control" style = "width: 300px;"/>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <div class = "nume">
+                <div class = "row">
+                    <div class = "row">
+                        <i class="fa fa-id-card"></i>
+                        <label class = "form-label" style= "margin-left: 40px;">CNP</label>
+                    </div>
+                    <div class = "col-sm-12">
+                    <input type = "text" formControlName = "cnp" class = "form-control" style = "width: 268px;"/>
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class = "row">
+                        <i class="fa fa-phone"></i>
+                        <label class = "form-label" style= "margin-left: 40px;">Telefon</label>
+                    </div>
+                    <div class = "col-sm-12">
+                    <input type = "text" formControlName = "telefon" class = "form-control" style = "width: 300px;"/>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="nume">
+                <div class = "row" style = "margin-top:40px;">
+                    <h5>Selectează tipul contului:</h5>
+                    <div class = "row" style = "margin-left: 40px;">
+                        <input type="radio" id="client" name="client" value="client">
+                        <label class = "form-label" style= "margin-left: 20px; margin-right: 30px;" for = "client">Client</label>
+                        <input type="radio" id="proprietar" name="proprietar" value="proprietar">
+                        <label class = "form-label" style= "margin-left: 20px;" for = "proprietar">Proprietar</label>
+                    </div>
+                </div>
+            </div>
+            <button type = "submit" class = "buton_inreg">Înregistrare</button>
+        </div>
+    </div>
+</div>
+

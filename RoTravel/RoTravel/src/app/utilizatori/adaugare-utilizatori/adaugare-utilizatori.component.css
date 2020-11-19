@@ -1,0 +1,89 @@
+.div-inregistrare
+{
+    background-image: url('/assets/images/inregistrare_background.jpg');
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; 
+}
+.view
+{ 
+    width: 700px;
+    height: 500px;
+    margin-top: 100px;
+    margin-right: 40px;
+    margin-left: 230px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: black;
+    opacity: 0.6;
+    color: white;
+}
+.inregistrare
+{
+    margin-top: 30px;
+    height: 100vh !important;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-right: 40px;
+    margin-left: 200px;
+    margin-top: 3rem!important;
+}
+.nume
+{
+    display: flex;
+    flex-direction: row;
+
+}
+.nume>div
+{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+
+.informatii
+{
+    align-content: left;
+    text-align: left;
+    margin-left: 30px;
+}
+
+.email
+{
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #000;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #a7a7a7;
+    font-family: "Arial";
+}
+
+.parola
+{
+    display: flex;
+    flex-direction: row;
+}
+.parola>div
+{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.buton_inreg
+{
+    background-color: red;
+    color:white;
+}
+
+.buton_inreg:hover
+{
+    background-color: blue;
+    color:white;
+}

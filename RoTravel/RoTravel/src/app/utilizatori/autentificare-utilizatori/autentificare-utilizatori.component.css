@@ -1,0 +1,73 @@
+.autentificare
+{
+    background-image: url('/assets/images/inregistrare.jpg');
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; 
+
+}
+
+.view
+{
+    height: 100vh !important;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-right: 40px;
+    margin-left: 200px;
+    margin-top: 3rem!important;
+
+}
+
+
+.div-autentificare
+{
+    
+    width: 500px;
+    height: 280px;
+    
+    margin-top: 70px;
+    margin-right: 40px;
+
+    border-radius: 20px;
+    text-align: center;
+}
+
+i
+{
+    margin-right: 25px;
+    font-size: 25px;
+}
+
+input
+{
+    font-size: 17px;
+}
+
+.title
+{
+    font-size: 30px;
+    color: white;
+}
+
+.cont
+{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    margin-left: 130px;
+}
+
+.inregistrare:hover{
+    background-color: black;
+    color:white;
+}
+.buton{
+    background-color: red;
+    color:white;
+}
+.buton:hover
+{
+    background-color: black;
+    color:white;
+}

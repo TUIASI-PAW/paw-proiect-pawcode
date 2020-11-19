@@ -1,0 +1,13 @@
+.div-gestionare
+{
+    width: 1050px;
+    height: 700px;
+    margin-top: 70px;
+    margin-right: 30px;
+    margin-left: 230px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: rgb(231, 227, 227);
+    color: black;
+}
+
