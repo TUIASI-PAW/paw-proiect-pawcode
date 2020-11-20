@@ -1,0 +1,16 @@
+[
+    {
+        "locatie":"Brasov",
+        "numeOferta":"Hotel Kronwell",
+        "pret":"1 noapte, 2 adulti, 518 RON",
+        "imagine":"/assets/images/HotelKronwell.jpg",
+        "descriere": "Hotelul de 4 stele superior Kronwell Brasov are un restaurant à la carte elegant, facilități ultramoderne și WiFi gratuit. Centrul spa și de wellness Belaqva oferă tratamente de înfrumusețare, un studio de fitness, o saună și o piscină interioară, la un cost suplimentar.Toate camerele sunt mobilate cu gust și au aer condiționat. Acestea includ zonă de relaxare cu smart TV cu ecran plat, minibar, precum și baie cu halat de baie și articole de toaletă gratuite. Camerele au sistem de încălzire prin pardoseală, lenjerie de pat și perne hipoalergenice, precum și o colecție de vinuri. Unele camere sunt dotate cu aparatură ultramodernă, cum ar fi tabletă iPad și televizor HD.Restaurantul Adagio servește delicatese și băuturi savuroase, iar după o zi petrecută în zona istorică a orașului, oaspeții se pot relaxa la C-Bar. Couchette Traveller’s Bistro oferă meniuri sănătoase, care includ produse proaspete de casă, precum și un melanj de preparare italiene, franțuzești și orientale."
+    },
+    {
+        "locatie":"Brasov",
+        "numeOferta":"Hotel Aro Palace",
+        "pret":"1 noapte, 2 adulti, 321 RON",
+        "imagine":"/assets/images/HotelAroPalace.jpg",
+        "descriere":"Cu vedere la Muntele Tâmpa şi la cartierul istoric medieval al Braşovului, hotelul tradiţional Aro Palace este orientat către Parcul Central. Oferă unităţi de cazare spaţioase şi luxoase, precum şi acces gratuit la internet.Camerele sunt prevăzute cu aer condiţionat, TV prin cablu şi halate de baie. Sunt proiectate în culori calde şi au podea cu mochetă.Oaspeţii pot degusta preparate din bucătăria românească şi europeană la restaurantul hotelului şi se pot bucura de vederea la Cetatea Braşovului din Clubul Belvedere, aflat la ultimul etaj al hotelului Aro Palace."
+    }
+]

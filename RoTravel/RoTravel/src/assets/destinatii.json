@@ -1,0 +1,32 @@
+[
+    {
+        "Localitate":"Brasov",
+        "ProprietatiDisponibile":5,
+        "image":"./assets/images/Brasov.jpg"
+    },
+    {
+        "Localitate":"Vatra Dornei",
+        "ProprietatiDisponibile":5,
+        "image":"./assets/images/VatraDornei.jpg"
+    },
+    {
+        "Localitate":"Gura Humorului",
+        "ProprietatiDisponibile":5,
+        "image":"./assets/images/GuraHumorului.jpg"
+    },
+    {
+        "Localitate":"Poiana Brașov",
+        "ProprietatiDisponibile":6,
+        "image":"./assets/images/PoianaBrasov.jpg"
+    },
+    {
+        "Localitate":"Sinaia",
+        "ProprietatiDisponibile":3,
+        "image":"./assets/images/Sinaia.jpg"
+    },
+    {
+        "Localitate":"Sibiu",
+        "ProprietatiDisponibile":4,
+        "image":"./assets/images/Sibiu.jpg"
+    }
+]
