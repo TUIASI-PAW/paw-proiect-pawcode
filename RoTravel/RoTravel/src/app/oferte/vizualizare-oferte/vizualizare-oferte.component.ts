@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-vizualizare-oferte',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VizualizareOferteComponent implements OnInit {
 
-  constructor() { }
+  constructor(private httpService: HttpClient) { }
+  locatii:string [];
 
   ngOnInit(): void {
+    this.httpService.get('./assets/destinatii.json').subscribe(
+      locatie =>{
+        this.locatii = locatie as string [];
+      },
+    )
   }
 
 }

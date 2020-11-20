@@ -1,7 +1,15 @@
 <div class="bg1">
     <div class="inregistrare">
         <div class="view">
-
+            <div class="flex-container">
+                <ng-container *ngFor="let locatie of locatii">
+                    <div>
+                        <img [src]="locatie.image" width= "275" height= "183">
+                        <h3>{{locatie.Localitate}}</h3>
+                        <h4>Proprietăți disponibile: {{locatie.ProprietatiDisponibile}}</h4>
+                    </div>
+                </ng-container>
+            </div>     
         </div>
     </div>
 </div>
