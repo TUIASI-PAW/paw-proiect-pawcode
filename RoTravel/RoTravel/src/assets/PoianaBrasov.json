@@ -1,0 +1,23 @@
+[
+    {
+        "locatie":"Poiana Brasov",
+        "numeOferta":"Hotel Escalade",
+        "pret":"1 noapte, 2 adulti, 360 RON",
+        "imagine":"/assets/images/HotelEscalade.jpg",
+        "descriere": "Situat la doar 100 de metri de pârtiile de schi şi de un patinoar din Poiana Braşov, Hotelul Escalade oferă un centru spa cu piscină interioară şi saună.Toate camerele au baie privată şi sunt dotate cu minibar şi TV. Unele au şi un balcon mic. Proprietatea este formată din 2 clădiri, una cu unităţi de cazare standard şi cealaltă cu camere executive.Vă puteţi petrece timpul bucurându-vă de biliard, tenis de masă sau bowling, disponibile la un cost suplimentar. De asemenea, puteţi beneficia de facilităţi gratuite de fitness.Hotelul are un bar de zi şi un restaurant care serveşte diverse preparate locale româneşti, dar şi mâncăruri internaţionale. Oaspeţii îşi pot începe ziua cu un bufet de mic dejun."
+    },
+    {
+        "locatie":"Poiana Brasov",
+        "numeOferta":"Hotel Alpin",
+        "pret":"1 noapte, 2 adulti, 400 RON",
+        "imagine":"/assets/images/HotelAlpin.jpg",
+        "descriere":"Hotelul Alpin Resort, situat în centrul stațiunii Poiana Brașov, la 10 minute de mers pe jos de pârtiile de schi, pune la dispoziție unități de cazare cu acces gratuit la o piscină semi-olimpică. Iarna este oferit un serviciu de transfer gratuit la/de la pârtii, cu plecări la fiecare 5 minute.Accesul la WiFi este disponibil gratuit. Cele mai multe camere au balcon, iar unele unități de cazare oferă vedere la munte. Acestea includ un TV prin satelit, un minibar, o cutie de valori şi o baie privată.Hotelul Alpin Resort este format din 3 clădiri care comunică: Hotelul Alpin, Casa Alpin şi Aparthotel Alpin. Complexul pune la dispoziție un centru spa mare, 4 restaurante, 2 terase şi grădini de vară, precum şi 41 de săli de conferinţe şi evenimente cu o capacitate cuprinsă între 10 și 700 de persoane. Alte facilități includ baruri, un club de noapte și 3 magazine de marcă"
+    },
+    {
+        "locatie":"Poiana Brasov",
+        "numeOferta":"Teleferic Grand Hotel",
+        "pret":"1 noapte, 2 adulti, 221 RON",
+        "imagine":"/assets/images/TelefericHotel.jpg",
+        "descriere":"Situat în stațiunea Poiana Brașov, la doar 50 de metri de teleschi, în partea de jos a pârtiei de schi Subteleferic, Teleferic Grand Hotel oferă cazare cu vedere panoramică la munte și WiFi gratuit. Acest hotel îmbină elemente rustice şi căldura lemnului cu facilități de înaltă tehnologie.Toate camerele sunt decorate cu gust şi au mobilier şi decorațiuni din lemn masiv. De asemenea, acestea includ TV cu ecran plat, minibar, seif şi zonă de relaxare. Cele mai multe unități de cazare au balcon.Oaspeții de la Teleferic Grand Hotel beneficiază de acces gratuit la centrul spa, care include o piscină interioară, cadă cu hidromasaj în aer liber, o zonă de fitness şi 3 tipuri de saune: umedă, uscată şi cu infraroșu. La un cost suplimentar sunt oferite diverse masaje şi tratamente. Barul de la centrul spa oferă o gamă largă de băuturi din fructe, preparate în fața oaspeților."
+    }
+]

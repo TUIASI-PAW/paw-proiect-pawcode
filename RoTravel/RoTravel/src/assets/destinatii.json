@@ -1,22 +1,22 @@
 [
     {
         "Localitate":"Brasov",
-        "ProprietatiDisponibile":5,
+        "ProprietatiDisponibile":4,
         "image":"./assets/images/Brasov.jpg"
     },
     {
         "Localitate":"Vatra Dornei",
-        "ProprietatiDisponibile":5,
+        "ProprietatiDisponibile":4,
         "image":"./assets/images/VatraDornei.jpg"
     },
     {
         "Localitate":"Gura Humorului",
-        "ProprietatiDisponibile":5,
+        "ProprietatiDisponibile":3,
         "image":"./assets/images/GuraHumorului.jpg"
     },
     {
-        "Localitate":"Poiana Brașov",
-        "ProprietatiDisponibile":6,
+        "Localitate":"Poiana Brasov",
+        "ProprietatiDisponibile":3,
         "image":"./assets/images/PoianaBrasov.jpg"
     },
     {
@@ -26,7 +26,7 @@
     },
     {
         "Localitate":"Sibiu",
-        "ProprietatiDisponibile":4,
+        "ProprietatiDisponibile":3,
         "image":"./assets/images/Sibiu.jpg"
     }
 ]

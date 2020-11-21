@@ -12,5 +12,19 @@
         "pret":"1 noapte, 2 adulti, 321 RON",
         "imagine":"/assets/images/HotelAroPalace.jpg",
         "descriere":"Cu vedere la Muntele Tâmpa şi la cartierul istoric medieval al Braşovului, hotelul tradiţional Aro Palace este orientat către Parcul Central. Oferă unităţi de cazare spaţioase şi luxoase, precum şi acces gratuit la internet.Camerele sunt prevăzute cu aer condiţionat, TV prin cablu şi halate de baie. Sunt proiectate în culori calde şi au podea cu mochetă.Oaspeţii pot degusta preparate din bucătăria românească şi europeană la restaurantul hotelului şi se pot bucura de vederea la Cetatea Braşovului din Clubul Belvedere, aflat la ultimul etaj al hotelului Aro Palace."
+    },
+    {
+        "locatie":"Brasov",
+        "numeOferta":"Safrano Palace",
+        "pret":"1 noapte, 2 adulti, 221 RON",
+        "imagine":"/assets/images/SafronPalace.jpg",
+        "descriere":"Safrano Palace se află în centrul orașului Brașov, lângă Piața Sfatului și oferă WiFi gratuit în întreaga proprietate.Fiecare cameră este dotată cu TV cu ecran plat și baie privată. Pentru confortul oaspeților, se oferă papuci și articole de toaletă gratuite.Recepția proprietății are program nonstop."
+    },
+    {
+        "locatie":"Brasov",
+        "numeOferta":" Grand Hotel Belvedere",
+        "pret":"1 noapte, 2 adulti, 421 RON",
+        "imagine":"/assets/images/HotelBelvedere.jpg",
+        "descriere":"Situat la doar 700 de metri de centrul vechi, Grand Hotel Belvedere are o piscină sezonieră în aer liber și vedere panoramică la Brașov. Accesul WiFi este gratuit în întreaga proprietate.Camerele de la Grand Hotel Belvedere sunt dotate cu aer condiționat, minibar și TV cu ecran plat cu canale prin cablu. Băile private au articole de toaletă gratuite și uscător de păr. Majoritatea camerelor sunt prevăzute cu balcon. De asemenea, majoritatea camerelor oferă vedere panoramică la oraș."
     }
 ]

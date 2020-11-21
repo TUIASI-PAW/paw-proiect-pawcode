@@ -1,0 +1,30 @@
+[
+    {
+        "locatie":"Vatra Dornei",
+        "numeOferta":"Hotel Dorna",
+        "pret":"1 noapte, 2 adulti, 218 RON",
+        "imagine":"/assets/images/HotelDorna.jpg",
+        "descriere": "Hotelul Dorna se află în zona de schi Vatra Dornei. Proprietatea este la doar 50 de metri de pârtia de schi Parc. Oaspeții beneficiază de recepție deschisă non-stop.Toate camerele au aer condiționat, acces gratuit la internet prin cablu și TV prin cablu. Băile private sunt dotate cu cadă sau duș.Restaurantul servește mâncăruri internaționale și românești tipice, cum ar fi mâncăruri din vânat. Facilitățile oferite de proprietate includ loc de joacă pentru copii."
+    },
+    {
+        "locatie":"Vatra Dornei",
+        "numeOferta":"Domeniul Dornei ",
+        "pret":"1 noapte, 2 adulti, 350 RON",
+        "imagine":"/assets/images/DomeniulDornei.jpg",
+        "descriere":"Situat în localitatea Dorna Arini din Munţii Bistriţei, la 10 minute cu maşina de Vatra Dornei, Domeniul Dornei oferă o zonă spa modernă la care oaspeţii au acces gratuit. Pune la dispoziţia oaspeţilor acces Wi-Fi gratuit şi o parcare supravegheată gratuită.Camerele elegante sunt decorate cu elemente specifice regiunilor Bucovina şi Maramureş şi beneficiază de un balcon cu vedere la împrejurimi. Acestea includ un TV LED cu canale prin cablu şi un minibar. Băile sunt prevăzute cu duş sau cadă şi articole de toaletă gratuite.Printre facilităţile spa se numără saune uscate şi umede, o cadă cu hidromasaj interioară, un centru de fitness şi o piscină interioară. Este disponibilă o mare varietate de masaje."
+    },
+    {
+        "locatie":"Vatra Dornei",
+        "numeOferta":"Hotel Carol",
+        "pret":"1 noapte, 2 adulti, 600 RON",
+        "imagine":"/assets/images/HotelCarol.jpg",
+        "descriere":"Situat în staţiunea montană Vatra Dornei, Hotelul Carol se află la doar 50 de metri de centru. Centrul spa are saune, cadă cu hidromasaj şi cameră salină. Accesul la internet WiFi este disponibil gratuit în întregul hotel.Toate camerele au TV cu ecran plat cu canale prin cablu şi o zonă de relaxare. Baia privată include articole de toaletă gratuite şi uscător de păr.Centrul spa este disponibil la un cost suplimentar şi include saună finlandeză şi cu infraroşu; sunt disponibile şi tratamente de înfrumuseţare, cum ar fi duş Vichy, hidro-masaj, electro-stimulare şi cavitaţie. Există şi un salon de înfrumuseţare, cu un coafor. În curtea spaţioasă există o parcare privată, o terasă de vară cu umbrele de soare, o terasă deschisă pe tot parcursul anului şi încălzită în timpul iernii, precum şi un loc de joacă pentru copii."
+    },
+    {
+        "locatie":"Vatra Dornei",
+        "numeOferta":"Hotel Silva",
+        "pret":"1 noapte, 2 adulti, 521 RON",
+        "imagine":"/assets/images/HotelSilva.jpg",
+        "descriere":"Hotelul Silva este situat în centrul orașului Vatra Dornei, la 4 minute de mers cu maşina de pârtiile de schi Veverița și Dealu Negru, şi oferă o sală de fitness, o saună, o parcare privată gratuită și Wi-Fi gratuit.Toate camerele au mobilier funcţional, balcon, telefon, TV prin satelit și baie privată cu duș și articole de toaletă gratuite.Oaspeții de la Hotelul Silva pot lua masa la orice oră, în restaurant. Hotelul oferă vouchere de masă.Excursii pot fi organizate la recepția hotelului, iar o stație de taxi și magazine sunt în apropiere de clădire. Gara este la 500 de metri, iar aeroportul la 10 km."
+    }
+]

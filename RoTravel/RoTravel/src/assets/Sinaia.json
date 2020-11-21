@@ -1,0 +1,23 @@
+[
+    {
+        "locatie":"Sinaia",
+        "numeOferta":"Hotel Mara",
+        "pret":"1 noapte, 2 adulti, 348 RON",
+        "imagine":"/assets/images/HotelMara.jpg",
+        "descriere": "Hotelul Mara se află într-un loc liniștit din stațiunea montană Sinaia, pe un deal înconjurat de munți și păduri. Hotelul oferă acces gratuit la o piscină acoperită parțial, la saună și la cada cu hidromasaj, precum și WiFi gratuit în întreaga clădire.Toate camerele Hotelului Mara au zonă de relaxare, TV, minibar, baie proprie cu cadă și uscător de păr, precum și balcon cu vedere la munte.Oaspeții pot lua masa la restaurantul à la carte Mountain View sau pot savura băuturi la barul hotelului. Alte facilități de la Hotelul Mara includ recepție cu program nonstop, 10 săli de conferințe pentru evenimente corporatiste, precum și o parcare privată gratuită."
+    },
+    {
+        "locatie":"Sinaia",
+        "numeOferta":"Hotel Sinaia",
+        "pret":"1 noapte, 2 adulti, 331 RON",
+        "imagine":"/assets/images/HotelSinaia.jpg",
+        "descriere":"Hotelul Rina Sinaia are o poziţie centrală, chiar lângă Parcul Dimitrie Ghica, pe strada comercială principală. Acest hotel emblematic oferă servicii spa şi acces gratuit la o piscină interioară, o saună şi facilităţi de fitness.Toate camerele hotelului Rina Sinaia au ferestre mari, cu vedere panoramică la munţii din jur. Unităţile includ un TV cu ecran plat şi o baie privată cu duş sau cadă.Conexiunea WiFi este gratuită în întreaga proprietate. Hotelul are un loc de joacă interior. Pentru relaxare, se pot aranja masaje.Hotelul are o cafenea şi un restaurant care serveşte un mic dejun tip bufet şi preparate internaţionale. Crama Sinaia aşteaptă oaspeţii cu mâncăruri tradiţionale româneşti, muzică live şi dansuri joi, vineri şi sâmbătă."
+    },
+    {
+        "locatie":"Sinaia",
+        "numeOferta":"Hotel Rina",
+        "pret":"1 noapte, 2 adulti, 221 RON",
+        "imagine":"/assets/images/HotelRina.jpg",
+        "descriere":"Hotelul Rina Cerbul este situat în centrul oraşului Sinaia, la 500 de metri de gară şi de telegondolă. Hotelul oferă parcare gratuită şi acces gratuit la internet WiFi.Camerele hotelului Rina Cerbul au mobilier din lemn de culoare deschisă, podea cu parchet, TV, frigider şi baie.Ramayana Cafe & Restaurant are legătură directă cu hotelul şi serveşte mic dejun continental şi preparate indiene. De asemenea, aici puteţi savura o ceaşcă de ceai dintr-o colecţie bogată de sortimente sau vă puteţi relaxa cu o narghilea aromată. În plus, vă puteţi bucura de restaurantul şi crama hotelului Rina Sinaia."
+    }
+]

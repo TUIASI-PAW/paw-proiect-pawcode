@@ -1,0 +1,23 @@
+[
+    {
+        "locatie":"Gura Humorului,",
+        "numeOferta":"Best Western Bucovina",
+        "pret":"1 noapte, 2 adulti, 162 RON",
+        "imagine":"/assets/images/BestWestern.jpg",
+        "descriere": "Situat în centrul oraşului Gura Humorului, Best Western Bucovina Club de Munte oferă 2 restaurante, o zonă de spa, acces gratuit la internet WiFi şi o terasă. Zona de schi Şoimul, parcul Ariniş şi centrul de agrement Parc Aventura se află la aproximativ 10 minute de mers pe jos.Toate camerele hotelului Best Western Bucovina Club de Munte au TV LCD cu canale prin cablu, minibar şi baie privată cu articole de toaletă gratuite.Centrul spa Vitality oferă o saună, un hamam şi o cadă cu hidromasaj. La cerere sunt disponibile diverse tipuri de masaje şi proceduri de relaxare. Hotelul asigură un club pentru copii cu loc de joacă interior, hochei de masă, fotbal de masă şi Xbox."
+    },
+    {
+        "locatie":"Gura Humorului",
+        "numeOferta":"Vila Boem",
+        "pret":"1 noapte, 2 adulti, 200 RON",
+        "imagine":"/assets/images/VilaBoem.jpg",
+        "descriere":"ila Boem se află în Gura Humorului, în județul Suceava. Aceasta oferă o terasă la soare, dotată cu grătar, acces WiFi gratuit și parcare privată gratuită.Camerele sunt dotate cu TV cu ecran plat cu canale prin satelit, iar unele au zonă de relaxare, ideală după o zi obositoare. Toate camerele au ceainic și includ o baie privată, prevăzută cu papuci, articole de toaletă gratuite și uscător de păr.Proprietatea are un lounge comun și pune la dispoziția oaspeților biciclete gratuite."
+    },
+    {
+        "locatie":"Gura Humorului",
+        "numeOferta":"Piatra Pinului Ski & Spa",
+        "pret":"1 noapte, 2 adulti, 221 RON",
+        "imagine":"/assets/images/SafronPalace.jpg",
+        "descriere":"Oferind cazare în localitatea Gura Humorului, la 1,9 km de parcul de aventură Escalada, Piatra Pinului Ski & Spa are restaurant, bar, centru de fitness și parcare privată gratuită. Proprietatea are lounge comun și camere cu aer condiționat, WiFi gratuit și baie privată. Există și camere de familie.Camerele au TV cu ecran plat și birou. În toate camerele există dulap.Piatra Pinului Ski & Spa oferă un mic dejun continental sau tip bufet.Oaspeții se pot relaxa în grădină sau în zona de wellness, care include hamam, cadă cu hidromasaj și saună. Oaspeții cazați la această proprietate pot practica diverse activități în Gura Humorului și în împrejurimi, inclusiv drumeții, schi și ciclism."
+    }
+]

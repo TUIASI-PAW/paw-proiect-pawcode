@@ -1,15 +1,37 @@
 <div class="bg1">
     <div class="inregistrare">
         <div class="view">
-            <div class="flex-container">
-                <ng-container *ngFor="let locatie of locatii">
-                    <div>
-                        <img [src]="locatie.image" width= "275" height= "183">
-                        <h3>{{locatie.Localitate}}</h3>
-                        <h4>Proprietăți disponibile: {{locatie.ProprietatiDisponibile}}</h4>
-                    </div>
-                </ng-container>
-            </div>     
+            <div *ngIf ="!destinatieSelectata">
+                <div class="flex-container">
+                    <ng-container *ngFor="let locatie of locatii">
+                        <div (click)="onClickDestination(locatie.Localitate)">
+                            <img [src]="locatie.image" width= "275" height= "183">
+                            <h3>{{locatie.Localitate}}</h3>
+                            <h4>Proprietăți disponibile: {{locatie.ProprietatiDisponibile}}</h4>
+                        </div>
+                    </ng-container>
+                </div>
+            </div> 
+            <div *ngIf ="destinatieSelectata">
+                <div class="flex-container">
+                    <ng-container *ngFor="let oferta of oferte">
+                        <div (click)="onClickOfert(oferta.numeOferta)">
+                            <img [src]="oferta.imagine" width= "275" height= "183">
+                            <h3>{{oferta.numeOferta}}</h3>
+                            <h4>Pret: {{oferta.pret}}</h4>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+            <div *ngIf ="ofertaSelectata">
+                <!-- Div ul pentru oferta selectata cand ofertaSelectata devine true-->
+                        <div>
+                            <img [src]="oferta.imagine" width= "275" height= "183">
+                            <h3>{{oferta.numeOferta}}</h3>
+                            <h4>Pret: {{oferta.pret}}</h4>
+                            <p>Descriere: {{oferta.numeOferta}}</p>
+                        </div>
+            </div>
         </div>
     </div>
 </div>

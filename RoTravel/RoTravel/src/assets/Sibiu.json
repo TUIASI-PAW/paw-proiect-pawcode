@@ -1,0 +1,23 @@
+[
+    {
+        "locatie":"Sibiu",
+        "numeOferta":"Hotel Imparatul Romanilor",
+        "pret":"1 noapte, 2 adulti, 450 RON",
+        "imagine":"/assets/images/HotelImparatulRomanilor.jpg",
+        "descriere": "Datând din secolul al XVI-lea, Împăratul Romanilor impresionează prin arhitectura sa sofisticată şi interioarele sale elegante. Este situat în centrul istoric al Sibiului şi are o piscină interioară gratuită, saună şi sală de gimnastică. În hol este disponibil acces gratuit la internet WiFi.Camerele sunt decorate elegant şi au TV prin cablu. De asemenea, includ minibar şi baie privată. Proprietatea a găzduit multe personalităţi bine-cunoscute de-a lungul secolelor, inclusiv pe împăratului Iosif al II-lea.Oaspeţii Hotelul Împăratul Romanilor pot încerca preparate culinare din bucătăria tradiţională românească la restaurantul spaţios al hotelului, care are un acoperiş culisant. Este disponibil şi room service"
+    },
+    {
+        "locatie":"Sibiu",
+        "numeOferta":"Continental Forum Sibiu",
+        "pret":"1 noapte, 2 adulti, 200 RON",
+        "imagine":"/assets/images/ContinentalSibiu.jpg",
+        "descriere":"Situat într-o clădire istorică din centrul oraşului Sibiu, hotelul de 4 stele Continental Forum oferă camere elegante cu acces gratuit la internet WiFi. Oaspeţii pot savura preparate internaţionale şi balcanice la restaurant.Restaurantul Balkan Bistro din cadrul hotelului serveşte zilnic un mic dejun tip bufet, prânz şi cină à la carte. TeKaffe oferă specialităţi delicioase de patiserie şi cofetărie, precum şi ceai, cafea şi cappuccino.Continental Forum Sibiu se află la doar 3 minute de mers pe jos de Muzeul Brukenthal şi de Piaţa Mare."
+    },
+    {
+        "locatie":"Sibiu",
+        "numeOferta":"ART Hotel",
+        "pret":"1 noapte, 2 adulti, 221 RON",
+        "imagine":"/assets/images/ARTHotel.jpg",
+        "descriere":"Având o locație ideală în centrul istoric al orașului Sibiu, acest hotel de 4 stele este la 450 de metri de Turnul Sfatului din Sibiu, la 250 de metri de Piața Albert Huet și la 270 de metri de Piața Mare. ART Hotel oferă recepție deschisă non-stop, WiFi gratuit, restaurant, lounge comun și terasă.Acest hotel tip boutique are camere luminoase, cu aer condiționat. Fiecare unitate de cazare are TV cu ecran plat, birou și baie privată cu articole de toaletă gratuite. Pentru un plus de confort, oaspeții au la dispoziție room-service.Restaurantul proprietății servește în fiecare dimineață un mic dejun tip bufet cu opțiuni continentale. De asemenea, sunt disponibile diverse băuturi la barul proprietății. Hotelul pune la dispoziția oaspeților ziare, fotocopiator și fax."
+    }
+]
