@@ -1,7 +1,7 @@
 <div class="bg1">
     <div class="inregistrare">
         <div class="view">
-            <div *ngIf ="!destinatieSelectata">
+            <div *ngIf ="destinatieSelectata">
                 <div class="flex-container">
                     <ng-container *ngFor="let locatie of locatii">
                         <div (click)="onClickDestination(locatie.Localitate)">
@@ -12,7 +12,7 @@
                     </ng-container>
                 </div>
             </div> 
-            <div *ngIf ="destinatieSelectata">
+            <div *ngIf ="locatieSelectata">
                 <div class="flex-container">
                     <ng-container *ngFor="let oferta of oferte">
                         <div (click)="onClickOfert(oferta.numeOferta)">
@@ -25,12 +25,14 @@
             </div>
             <div *ngIf ="ofertaSelectata">
                 <!-- Div ul pentru oferta selectata cand ofertaSelectata devine true-->
+                <ng-container *ngIf="oferta">
                         <div>
                             <img [src]="oferta.imagine" width= "275" height= "183">
                             <h3>{{oferta.numeOferta}}</h3>
                             <h4>Pret: {{oferta.pret}}</h4>
-                            <p>Descriere: {{oferta.numeOferta}}</p>
+                            <p>Descriere: {{oferta.descriere}}</p>
                         </div>
+                </ng-container>
             </div>
         </div>
     </div>
