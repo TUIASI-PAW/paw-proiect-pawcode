@@ -9,13 +9,13 @@
                 <div class = "row">
                     <label class = "col-sm-12 col-form-label">Nume</label>
                     <div class = "col-sm-12">
-                    <input type = "text" formControlName = "nume" class = "form-control"/>
+                    <input type = "text" formControlName = "nume" class = "form-control" style = "width: 268px;" />
                     </div>
                 </div>
                 <div class = "row">
                     <label class = "col-sm-12 col-form-label">Prenume</label>
                     <div class = "col-sm-12">
-                    <input type = "text" formControlName = "prenume" class = "form-control"/>
+                    <input type = "text" formControlName = "prenume" class = "form-control" style = "width: 300px;"/>
                     </div>
                 </div>
             </div>
@@ -66,9 +66,9 @@
                 <div class = "row" style = "margin-top:40px;">
                     <h5>Selectează tipul contului:</h5>
                     <div class = "row" style = "margin-left: 40px;">
-                        <input type="radio" id="client" name="client" value="client">
+                        <input type="radio" id="client" ng-model name="user"  value="client">
                         <label class = "form-label" style= "margin-left: 20px; margin-right: 30px;" for = "client">Client</label>
-                        <input type="radio" id="proprietar" name="proprietar" value="proprietar">
+                        <input type="radio" id="proprietar" ng-model name="user" value="proprietar">
                         <label class = "form-label" style= "margin-left: 20px;" for = "proprietar">Proprietar</label>
                     </div>
                 </div>
