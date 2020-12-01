@@ -7,11 +7,7 @@ import java.util.List;
 import com.ro.travel.RoTravel.service.Service;
 import com.ro.travel.RoTravel.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value = "/api/utilizatori")
@@ -25,11 +21,12 @@ public class UserController {
     public List<User> getUsers() {
         return this.users;
     }
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public User getUser(@PathVariable("id") Long id) {
+    @RequestMapping(value = "/{_id}", method = RequestMethod.GET)
+    public User getUser(@PathVariable("_id") Long id) {
         return this.users.stream().filter(emp -> emp.getId() == id).findFirst().orElse(null);
     }
     @RequestMapping(method = RequestMethod.POST)
+    @CrossOrigin(origins="http://localhost:4200")
     public List<User> saveUser(@RequestBody User emp)  throws Exception {
         Long nextId = 0L;
         String tempEmail=emp.getEmail();
@@ -61,5 +58,17 @@ public class UserController {
             }
         }
         return this.users;
+    }
+    @RequestMapping(value="/login",method = RequestMethod.POST)
+    @CrossOrigin(origins="http://localhost:4200")
+    public User loginUser(@RequestBody User user){
+        String tempEmail=user.getEmail();
+        String tempPass=user.getPassword();
+        User userObj=null;
+        if(tempEmail!=null && tempPass!=null){
+           userObj= service.findUserByEmailAndPassword(tempEmail,tempPass);
+
+        }
+        return userObj;
     }
 }
