@@ -1,10 +1,13 @@
-export class Utilizatori {
+export class User  {
     id: number;
-    rol:string;
-    nume: string;
-    prenume: string;
+    tipCont:string;
+    firstName: string;
+    lastName: string;
     email: string;
-    parola: string;
-    cnp: number;
-    telefon: number;
+    password: string;
+    cnp: string;
+    telefon: string;
+    contstructor(){
+        
+    }
 }
