@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule} from '@angular/forms';
 
 import { UtilizatoriRoutingModule } from './utilizatori-routing.module';
 import { AdaugareUtilizatoriComponent } from './adaugare-utilizatori/adaugare-utilizatori.component';
@@ -9,11 +10,12 @@ import { AutentificareUtilizatoriComponent } from './autentificare-utilizatori/a
 
 
 @NgModule({
-  declarations: [AdaugareUtilizatoriComponent, GestionareUtlilizatoriComponent, AutentificareUtilizatoriComponent],
+  declarations: [AdaugareUtilizatoriComponent, GestionareUtlilizatoriComponent,AutentificareUtilizatoriComponent],
   imports: [
     CommonModule,
     UtilizatoriRoutingModule,
-    ReactiveFormsModule, 
+    ReactiveFormsModule,
+    FormsModule,
   ]
 })
 export class UtilizatoriModule { }
