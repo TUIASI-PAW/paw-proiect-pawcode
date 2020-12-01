@@ -31,4 +31,8 @@ export class UtilizatoriService{
 
        return this.httpClient.post<any>("http://localhost:8080/api/utilizatori/login",user)
     }
+
+    public registerUserFromRemote(user:User):Observable<any>{
+        return this.httpClient.post<any>("http://localhost:8080/api/utilizatori", user)
+    }
 }
