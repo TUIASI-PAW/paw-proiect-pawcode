@@ -1,3 +1,4 @@
+<form #authForm = "ngForm" (ngSubmit)="onSubmit(authForm)" >
   <div class = "div-inregistrare">
     <div  class = "inregistrare">
         <div class = "view">
@@ -5,76 +6,80 @@
                 <h1>Înregistrare</h1>
             </div>
             <br/>
-            <div class = "nume">
-                <div class = "row">
-                    <label class = "col-sm-12 col-form-label">Nume</label>
-                    <div class = "col-sm-12">
-                    <input type = "text" formControlName = "nume" class = "form-control" style = "width: 268px;" />
-                    </div>
-                </div>
-                <div class = "row">
-                    <label class = "col-sm-12 col-form-label">Prenume</label>
-                    <div class = "col-sm-12">
-                    <input type = "text" formControlName = "prenume" class = "form-control" style = "width: 300px;"/>
-                    </div>
-                </div>
-            </div>
-            <br/>
-            <div class = "nume">
-                <div class = "row">
+            
+                <div class = "nume">
                     <div class = "row">
-                        <i class="fa fa-envelope"></i>
-                        <label class = "form-label" style= "margin-left: 40px;">Email</label>
+                        <label class = "col-sm-12 col-form-label">Nume</label>
+                        <div class = "col-sm-12">
+                        <input type = "text" name = "nume" class = "form-control" style = "width: 268px;" ngModel required name = "string" />
+                        </div>
                     </div>
-                    <div class = "col-sm-12">
-                    <input type = "email" formControlName = "email" class = "form-control" style = "width: 268px;"/>
-                    </div>
-                </div>
-                <div class = "row">
                     <div class = "row">
-                        <i class="fa fa-key"></i>
-                        <label class = "form-label" style= "margin-left: 40px;">Parola</label>
-                    </div>
-                    <div class = "col-sm-12">
-                    <input type = "password" formControlName = "parola" class = "form-control" style = "width: 300px;"/>
+                        <label class = "col-sm-12 col-form-label">Prenume</label>
+                        <div class = "col-sm-12">
+                        <input type = "text" name = "prenume" class = "form-control" style = "width: 300px;" ngModel required name = "string"/>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <br/>
-            <div class = "nume">
-                <div class = "row">
+                <br/>
+                <div class = "nume">
                     <div class = "row">
-                        <i class="fa fa-id-card"></i>
-                        <label class = "form-label" style= "margin-left: 40px;">CNP</label>
+                        <div class = "row">
+                            <i class="fa fa-envelope"></i>
+                            <label class = "form-label" style= "margin-left: 40px;">Email</label>
+                        </div>
+                        <div class = "col-sm-12">
+                        <input type = "email" name = "email" class = "form-control" style = "width: 268px;" ngModel required email/>
+                        </div>
                     </div>
-                    <div class = "col-sm-12">
-                    <input type = "text" formControlName = "cnp" class = "form-control" style = "width: 268px;"/>
-                    </div>
-                </div>
-                <div class = "row">
                     <div class = "row">
-                        <i class="fa fa-phone"></i>
-                        <label class = "form-label" style= "margin-left: 40px;">Telefon</label>
-                    </div>
-                    <div class = "col-sm-12">
-                    <input type = "text" formControlName = "telefon" class = "form-control" style = "width: 300px;"/>
-                    </div>
-                </div>
-                
-            </div>
-            <div class="nume">
-                <div class = "row" style = "margin-top:40px;">
-                    <h5>Selectează tipul contului:</h5>
-                    <div class = "row" style = "margin-left: 40px;">
-                        <input type="radio" id="client" ng-model name="user"  value="client">
-                        <label class = "form-label" style= "margin-left: 20px; margin-right: 30px;" for = "client">Client</label>
-                        <input type="radio" id="proprietar" ng-model name="user" value="proprietar">
-                        <label class = "form-label" style= "margin-left: 20px;" for = "proprietar">Proprietar</label>
+                        <div class = "row">
+                            <i class="fa fa-key"></i>
+                            <label class = "form-label" style= "margin-left: 40px;">Parola</label>
+                        </div>
+                        <div class = "col-sm-12">
+                        <input type = "password" name = "parola" class = "form-control" style = "width: 300px;" ngModel required minlength="6"/>
+                        </div>
                     </div>
                 </div>
+                <br/>
+                <div class = "nume">
+                    <div class = "row">
+                        <div class = "row">
+                            <i class="fa fa-id-card"></i>
+                            <label class = "form-label" style= "margin-left: 40px;">CNP</label>
+                        </div>
+                        <div class = "col-sm-12">
+                        <input type = "text" name = "cnp" class = "form-control" style = "width: 268px;" ngModel required minlength = "13"/>
+                        </div>
+                    </div>
+                    <div class = "row">
+                        <div class = "row">
+                            <i class="fa fa-phone"></i>
+                            <label class = "form-label" style= "margin-left: 40px;">Telefon</label>
+                        </div>
+                        <div class = "col-sm-12">
+                        <input type = "text" name = "telefon" class = "form-control" style = "width: 300px;" ngModel required minlength = "10"/>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="nume">
+                    <div class = "row" style = "margin-top:40px;">
+                        <h5>Selectează tipul contului:</h5>
+                        <div class = "row" style = "margin-left: 40px;">
+                            <input type="radio" id="client" ng-model name="user"  value="client">
+                            <label class = "form-label" style= "margin-left: 20px; margin-right: 30px;" for = "client">Client</label>
+                            <input type="radio" id="proprietar" ng-model name="user" value="proprietar">
+                            <label class = "form-label" style= "margin-left: 20px;" for = "proprietar">Proprietar</label>
+                        </div>
+                    </div>
+                </div>
+                <button type = "submit" class = "btn btn-indigo waves-effect waves-light buton buton_inreg" [disabled]="!authForm.valid" >Înregistrare</button>
             </div>
-            <button type = "submit" class = "buton_inreg">Înregistrare</button>
-        </div>
+        
     </div>
-</div>
+</div> 
+</form>
+
 

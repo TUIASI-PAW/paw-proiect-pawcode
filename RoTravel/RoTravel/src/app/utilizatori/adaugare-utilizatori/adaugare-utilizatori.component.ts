@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { UtilizatoriService } from '../utilizatori.service';
@@ -10,10 +10,14 @@ import { UtilizatoriService } from '../utilizatori.service';
   styleUrls: ['./adaugare-utilizatori.component.css']
 })
 export class AdaugareUtilizatoriComponent implements OnInit {
-
+  
   constructor() { 
   }
 
+  onSubmit(form:NgForm){{
+    console.log(form.value);
+    form.reset();
+  }}
   ngOnInit(): void {
   }
 
