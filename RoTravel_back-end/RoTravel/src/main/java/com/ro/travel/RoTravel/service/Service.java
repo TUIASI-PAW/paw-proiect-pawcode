@@ -18,4 +18,7 @@ public class Service {
     public User findUserByEmail(String email) {
         return userRepo.findByEmail(email);
     }
+    public User findUserByEmailAndPassword(String email,String password) {
+        return userRepo.findByEmailAndPassword(email,password);
+    }
 }
