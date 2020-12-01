@@ -2,7 +2,7 @@ import {Component, Injectable} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import {Utilizatori} from './models';
+import {User} from './models';
 import {environment} from '../../environments/environment';
 
 @Injectable({
@@ -15,16 +15,20 @@ export class UtilizatoriService{
 
     constructor(private httpClient: HttpClient){}
 
-    get(): Observable<Utilizatori[]>{
-        return this.httpClient.get<Utilizatori[]>(this.url);
+    get(): Observable<User[]>{
+        return this.httpClient.get<User[]>(this.url);
     }
 
-    save(utilizatori: Utilizatori): Observable<any>{
+    save(utilizatori: User): Observable<any>{
         return this.httpClient.post(this.url, utilizatori);
     }
     
     delete(id:number):Observable<any>
     {
         return this.httpClient.delete('${this.url}/${id}');
+    }
+    public loginUserFromRemote(user:User):Observable<any>{
+
+       return this.httpClient.post<any>("http://localhost:8080/api/utilizatori/login",user)
     }
 }
