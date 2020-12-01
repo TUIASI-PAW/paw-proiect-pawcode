@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import com.ro.travel.RoTravel.service.Service;
 import com.ro.travel.RoTravel.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/api/utilizatori")
 public class UserController {
     private List<User> users = new ArrayList<User>();
+    @Autowired
+    private Service service;
     UserController() {
     }
     @RequestMapping(method = RequestMethod.GET)
@@ -26,14 +30,24 @@ public class UserController {
         return this.users.stream().filter(emp -> emp.getId() == id).findFirst().orElse(null);
     }
     @RequestMapping(method = RequestMethod.POST)
-    public List<User> saveUser(@RequestBody User emp) {
+    public List<User> saveUser(@RequestBody User emp)  throws Exception {
         Long nextId = 0L;
+        String tempEmail=emp.getEmail();
+        if(tempEmail!=null && !"".equals(tempEmail)){
+            User userobj= service.findUserByEmail(tempEmail);
+            if(userobj!=null){
+                throw new Exception("Utilizatorul cu email-ul "+tempEmail+" este deja inregistrat!");
+            }
+        }
         if (this.users.size() != 0) {
             User lastEmp = this.users.stream().skip(this.users.size() - 1).findFirst().orElse(null);
             nextId = lastEmp.getId() + 1;
         }
         emp.setId(nextId);
+
+
         this.users.add(emp);
+        service.saveUser(emp);
         return this.users;
     }
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
