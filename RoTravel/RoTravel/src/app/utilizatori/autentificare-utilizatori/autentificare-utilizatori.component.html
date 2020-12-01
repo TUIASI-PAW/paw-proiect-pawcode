@@ -9,13 +9,13 @@
                 </div>
                 <div class = "md-form">
                     <i class = "fa fa-envelope prefix text-white">    </i>
-                    <input type = "email" ngModel required email name = "email" class = "white-text-form-control" placeholder="Adresa de email" style = "text-align: center;">
+                    <input type = "email" [(ngModel)]="user.email" required email name = "email" class = "white-text-form-control" placeholder="Adresa de email" style = "text-align: center;">
                 </div>
                 <br/>
 
                 <div class = "md-form">
                     <i class="fa fa-lock prefix white-text">    </i>
-                    <input type = "password" ngModel required minlength="6" name = "parola" class = "white-text-form-control" placeholder="Parola" style = "text-align: center;">
+                    <input type = "password" [(ngModel)]="user.password" required minlength="6" name = "parola" class = "white-text-form-control" placeholder="Parola" style = "text-align: center;">
                 </div>
                 <br/>
                 <div>
