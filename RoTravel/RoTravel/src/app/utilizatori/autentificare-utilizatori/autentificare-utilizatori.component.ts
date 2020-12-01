@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-autentificare-utilizatori',
@@ -11,5 +13,10 @@ export class AutentificareUtilizatoriComponent implements OnInit {
 
   ngOnInit(): void {
   }
+onSubmit(form:NgForm){
+  console.log(form.value)
+  form.reset
+
+}
 
 }

@@ -1,3 +1,4 @@
+<form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
 <div class = "autentificare">
     <div class="view">
         <div class = "div-autentificare col-md-6 col-xl-5 mb-4" >
@@ -8,26 +9,28 @@
                 </div>
                 <div class = "md-form">
                     <i class = "fa fa-envelope prefix text-white">    </i>
-                    <input type = "email" formControlName = "email" class = "white-text-form-control" placeholder="Adresa de email" style = "text-align: center;">
+                    <input type = "email" ngModel required email name = "email" class = "white-text-form-control" placeholder="Adresa de email" style = "text-align: center;">
                 </div>
                 <br/>
 
                 <div class = "md-form">
                     <i class="fa fa-lock prefix white-text">    </i>
-                    <input type = "password" formControlName = "parola" class = "white-text-form-control" placeholder="Parola" style = "text-align: center;">
+                    <input type = "password" ngModel required minlength="6" name = "parola" class = "white-text-form-control" placeholder="Parola" style = "text-align: center;">
                 </div>
                 <br/>
                 <div>
-                    <button class = "btn btn-indigo waves-effect waves-light buton">Autentificare</button>
+                    <button class = "btn btn-indigo waves-effect waves-light buton" [disabled]="!authForm.valid">Autentificare</button>
                 </div>  
             </div>
+            
             <div class = "cont">
                 <p style = "margin-right: 30px">Nu ai un cont încă?</p>
                 <div>
-                    <button class = "btn btn-indigo waves-effect waves-light inregistrare" style="height:28px; color: gray;">Înregistrare</button>
+                    <button class = "btn btn-indigo waves-effect waves-light inregistrare" style="height:28px; color: gray;" [routerLink]="'/utilizatori/new'">Înregistrare</button>
                 </div>
             </div> 
         </div>  
          
     </div>
 </div>
+</form>
