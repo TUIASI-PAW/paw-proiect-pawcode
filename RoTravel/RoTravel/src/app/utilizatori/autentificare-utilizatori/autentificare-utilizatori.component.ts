@@ -11,9 +11,8 @@ import { Route } from '@angular/compiler/src/core';
 })
 export class AutentificareUtilizatoriComponent implements OnInit {
   user =new User()
-
-  constructor(private _service:UtilizatoriService,private _route:Router) { }
-
+   constructor(private _service:UtilizatoriService,private _route:Router) { }
+  
   ngOnInit(): void {
   }
 onSubmit(form:NgForm){
@@ -23,7 +22,11 @@ onSubmit(form:NgForm){
     data=>{console.log(data); 
 
       if(data!=null){
+        this._service.setAuthenticated(true);
         this._route.navigate(['/oferte'])
+      }
+      else{
+        this._service.setAuthenticated(false);
       }
   
   },

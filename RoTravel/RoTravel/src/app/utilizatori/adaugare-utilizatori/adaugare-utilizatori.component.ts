@@ -15,6 +15,7 @@ export class AdaugareUtilizatoriComponent implements OnInit {
   constructor(private _service:UtilizatoriService, private _route:Router) { 
   }
 
+
   onSubmit(form:NgForm){
     this._service.registerUserFromRemote(this.user).subscribe(
       data=>{console.log(data);

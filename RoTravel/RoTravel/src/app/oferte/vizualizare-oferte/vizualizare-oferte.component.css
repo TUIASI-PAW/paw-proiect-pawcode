@@ -50,3 +50,15 @@
 .flex-container > div:hover{
    cursor:pointer;
 }
+
+.buton_rezervare
+{
+    background-color: red;
+    color:white;
+}
+
+.buton_rezervare:hover
+{
+    background-color: white;
+    color:black;
+}

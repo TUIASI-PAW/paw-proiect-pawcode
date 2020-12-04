@@ -32,6 +32,9 @@
                             <h4>Pret: {{oferta.pret}}</h4>
                             <p>Descriere: {{oferta.descriere}}</p>
                         </div>
+                        <div *ngIf="isAuthenticated == true">
+                            <button class = "btn btn-indigo waves-effect waves-light buton buton_rezervare">Rezervă</button>
+                        </div> 
                 </ng-container>
             </div>
         </div>

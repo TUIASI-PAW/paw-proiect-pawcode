@@ -12,7 +12,7 @@ import {environment} from '../../environments/environment';
 export class UtilizatoriService{
     //localhost:4200/api/utilizatori
     private url: string = `${environment.apiUrl}utilizatori`;
-
+    private authenticated = false;
     constructor(private httpClient: HttpClient){}
 
     get(): Observable<User[]>{
@@ -34,5 +34,13 @@ export class UtilizatoriService{
 
     public registerUserFromRemote(user:User):Observable<any>{
         return this.httpClient.post<any>("http://localhost:8080/api/utilizatori", user)
+    }
+
+    public setAuthenticated(val:boolean){
+        this.authenticated = val;
+    }
+
+    public getAuthenticated():boolean{
+        return this.authenticated;
     }
 }
