@@ -21,12 +21,8 @@ public class User {
     private String cnp;
 
     private String tipCont;
-    public User()
-    {
 
-    }
-
-    public User(long id, String firstName, String password, String email, String lastName, String telefon, String cnp, String tipCont) {
+    public User(long id, String firstName,String password, String email, String lastName, String telefon, String cnp, String tipCont) {
         super();
         this.id = id;
         this.firstName = firstName;
