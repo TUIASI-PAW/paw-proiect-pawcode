@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import {Router} from '@angular/router';
-import {UtilizatoriService} from '../utilizatori.service'
+import {AuthService} from '../../_services/auth.service';
+import {TokenStorageService} from '../../_services/token-storage.service';
+
 import {User} from '../models'
 import { Route } from '@angular/compiler/src/core';
+
 @Component({
   selector: 'app-autentificare-utilizatori',
   templateUrl: './autentificare-utilizatori.component.html',
@@ -11,31 +14,43 @@ import { Route } from '@angular/compiler/src/core';
 })
 export class AutentificareUtilizatoriComponent implements OnInit {
   user =new User()
-   constructor(private _service:UtilizatoriService,private _route:Router) { }
+  role:string;
+  isLoggedIn=false;
+  isLoginFailed=false;
+
+   constructor(private _service:AuthService,private token:TokenStorageService, private _route:Router) { }
   
   ngOnInit(): void {
+    if(this.token.getToken()){
+      this.isLoggedIn = true;
+      this.role=this.token.getUser().tipCont;
+    }
   }
 onSubmit(form:NgForm){
 
-  this._service.loginUserFromRemote(this.user).subscribe(
+  this._service.login(this.user).subscribe(
   
     data=>{console.log(data); 
+      this.token.saveToken(data.accessToken);
+      this.token.saveUser(data);
 
-      if(data!=null){
-        this._service.setAuthenticated(true);
-        this._route.navigate(['/oferte'])
-      }
-      else{
-        this._service.setAuthenticated(false);
-      }
+      this.isLoginFailed = false;
+      this.isLoggedIn = true;
+      this.role = this.token.getUser().tipCont;
+      this._route.navigate(['/oferte'])
   
   },
   error=>{
-    console.log("exception occured")
+    this.isLoginFailed = false;
+    console.log("eroor on LogIn");
   }
 
-  )
+  );
 
+}
+
+reloadPage():void{
+  window.location.reload();
 }
 
 }

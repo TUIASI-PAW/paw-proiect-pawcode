@@ -33,7 +33,7 @@ export class UtilizatoriService{
     }
 
     public registerUserFromRemote(user:User):Observable<any>{
-        return this.httpClient.post<any>("http://localhost:8080/api/utilizatori", user)
+        return this.httpClient.post<any>("http://localhost:8080/api/utilizatori/signup", user)
     }
 
     public setAuthenticated(val:boolean){
