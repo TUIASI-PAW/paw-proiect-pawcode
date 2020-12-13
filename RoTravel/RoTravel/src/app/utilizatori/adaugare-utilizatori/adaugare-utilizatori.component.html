@@ -11,13 +11,13 @@
                     <div class = "row">
                         <label class = "col-sm-12 col-form-label">Nume</label>
                         <div class = "col-sm-12">
-                        <input type = "text" name = "nume" class = "form-control" style = "width: 268px;" [(ngModel)] = "user.lastName" required name = "string" />
+                        <input type = "text" name = "lastName" class = "form-control" style = "width: 268px;" [(ngModel)] = "user.lastName" required name = "string" />
                         </div>
                     </div>
                     <div class = "row">
                         <label class = "col-sm-12 col-form-label">Prenume</label>
                         <div class = "col-sm-12">
-                        <input type = "text" name = "prenume" class = "form-control" style = "width: 300px;" [(ngModel)] = "user.firstName" required name = "string"/>
+                        <input type = "text" name = "firstName" class = "form-control" style = "width: 300px;" [(ngModel)] = "user.firstName" required name = "string"/>
                         </div>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                             <label class = "form-label" style= "margin-left: 40px;">Parola</label>
                         </div>
                         <div class = "col-sm-12">
-                        <input type = "password" name = "parola" class = "form-control" style = "width: 300px;" [(ngModel)]="user.password" required minlength="6"/>
+                        <input type = "password" name = "password" class = "form-control" style = "width: 300px;" [(ngModel)]="user.password" required minlength="6"/>
                         </div>
                     </div>
                 </div>
@@ -68,9 +68,9 @@
                     <div class = "row" style = "margin-top:40px;">
                         <h5>Selectează tipul contului:</h5>
                         <div class = "row" style = "margin-left: 40px;">
-                            <input type="radio" id="client" ng-model name="user"  value="client" [(ngModel)] = "user.tipCont" required>
-                            <label class = "form-label" style= "margin-left: 20px; margin-right: 30px;" for = "client">Client</label>
-                            <input type="radio" id="proprietar" ng-model name="user" value="proprietar" [(ngModel)] = "user.tipCont" required>
+                            <input type="radio" id="client" ng-model name="tipCont"  value="client" [(ngModel)] = "user.tipCont" required>
+                            <label class = "form-label" style= "margin-left: 20px; margin-right: 30px;" for = "tipCont">Client</label>
+                            <input type="radio" id="proprietar" ng-model name="tipCont" value="proprietar" [(ngModel)] = "user.tipCont" required>
                             <label class = "form-label" style= "margin-left: 20px;" for = "proprietar">Proprietar</label>
                         </div>
                     </div>

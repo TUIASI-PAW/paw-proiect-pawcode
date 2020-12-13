@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { UtilizatoriService } from '../utilizatori.service';
 import {User} from '../models'
+import {AuthService} from '../../_services/auth.service';
+
 
 @Component({
   selector: 'app-adaugare-utilizatori',
@@ -11,20 +13,24 @@ import {User} from '../models'
   styleUrls: ['./adaugare-utilizatori.component.css']
 })
 export class AdaugareUtilizatoriComponent implements OnInit {
-  user = new User()
-  constructor(private _service:UtilizatoriService, private _route:Router) { 
+  form:any={}
+  user=new User();
+  isSuccessful=false;
+  isSignUpFailed=false;
+  errorMessage='';
+  constructor(private _authService:AuthService, private _route:Router) { 
   }
 
 
   onSubmit(form:NgForm){
-    this._service.registerUserFromRemote(this.user).subscribe(
-      data=>{console.log(data);
-      
-        if(data!=null)
-        {
-          this._route.navigate(["/utilizatori"])
-        }
-      })
+    this._authService.register(this.user).subscribe(
+      data=>{
+        console.log(this.user);
+        this.isSuccessful=true;
+        this.isSignUpFailed=false;
+        this._route.navigate(['/utilizatori'])
+      }
+      );
     }
   
   ngOnInit(): void {

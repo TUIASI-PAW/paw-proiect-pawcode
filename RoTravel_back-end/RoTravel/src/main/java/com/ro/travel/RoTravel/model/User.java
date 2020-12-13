@@ -21,12 +21,8 @@ public class User {
     private String cnp;
 
     private String tipCont;
-    public User()
-    {
 
-    }
-
-    public User(long id, String firstName, String password, String email, String lastName, String telefon, String cnp, String tipCont) {
+    public User(long id, String firstName,String password, String email, String lastName, String telefon, String cnp, String tipCont) {
         super();
         this.id = id;
         this.firstName = firstName;
@@ -93,6 +89,6 @@ public class User {
 
     @Override
     public String toString() {
-        return String.format("User [id=%s, username=%s, lastName=%s, email=%s]", id, firstName, lastName, email);
+        return String.format("User [id=%s, firstName=%s, lastName=%s, email=%s, cnp=%s, telefon=%s, tipCont=%s]", id, firstName, lastName, email, cnp, telefon, tipCont);
     }
 }

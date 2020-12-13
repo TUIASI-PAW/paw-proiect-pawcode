@@ -44,6 +44,6 @@ public class Destinatie {
     @Override
     public String toString()
     {
-        return String.format("Destinatie[lacatie=%s, proprietatiDisponibile=%s, imagine=%s]",locatie, proprietatiDisponibile, image);
+        return String.format("Destinatie[locatie=%s, proprietatiDisponibile=%s, imagine=%s]",locatie, proprietatiDisponibile, image);
     }
 }
