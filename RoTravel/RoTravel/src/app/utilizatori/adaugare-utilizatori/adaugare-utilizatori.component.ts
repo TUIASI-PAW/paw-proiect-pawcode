@@ -24,7 +24,8 @@ export class AdaugareUtilizatoriComponent implements OnInit {
 
   onSubmit(form:NgForm){
     this._authService.register(this.user).subscribe(
-      data=>{console.log(data);
+      data=>{
+        console.log(this.user);
         this.isSuccessful=true;
         this.isSignUpFailed=false;
         this._route.navigate(['/utilizatori'])

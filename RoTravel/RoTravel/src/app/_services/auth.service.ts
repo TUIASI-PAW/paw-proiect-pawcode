@@ -25,14 +25,8 @@ export class AuthService {
   }
 
   register(user):Observable<any>{
-    return this.http.post(AUTH_API+'signup',{
-      email:user.email,
-      password:user.password,
-      lastName:user.lastName,
-      firstname:user.firstName,
-      tiCont:user.tipCont,
-      cnp:user.cnp,
-      telefon:user.telefon
-    },httpOptions);
+    console.log(user);
+    return this.http.post(AUTH_API+'signup',
+      user,httpOptions);
   }
 }

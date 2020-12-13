@@ -47,6 +47,7 @@ public class UserController {
 
     UserController() {
     }
+
     @RequestMapping(method = RequestMethod.GET)
     public List<User> getUsers() {
         return this.users;
@@ -55,46 +56,42 @@ public class UserController {
     public User getUser(@PathVariable("_id") Long id) {
         return this.users.stream().filter(emp -> emp.getId() == id).findFirst().orElse(null);
     }
-    @RequestMapping(value="/signup",method = RequestMethod.POST)
+
+    @PostMapping(value="/signup")
     @CrossOrigin(origins="http://localhost:4200")
     public ResponseEntity<?> saveUser(@RequestBody SignUpRequest signUpRequest)  throws Exception {
         long nextId=0L;
-//        String tempEmail=emp.getEmail();
-//        if(tempEmail!=null && !"".equals(tempEmail)){
-//            User userobj= service.findUserByEmail(tempEmail);
-//            if(userobj!=null){
-//                throw new Exception("Utilizatorul cu email-ul "+tempEmail+" este deja inregistrat!");
-//            }
-//        }
-//        if (this.users.size() != 0) {
-//            User lastEmp = this.users.stream().skip(this.users.size() - 1).findFirst().orElse(null);
-//            nextId = lastEmp.getId() + 1;
-//        }
-//        emp.setId(nextId);
-//
-//
-//        this.users.add(emp);
-//        service.saveUser(emp);
-       // return this.users;
+        users = userRepository.findAll();
+
        if(userRepository.findByEmail(signUpRequest.getEmail()) != null){
            return ResponseEntity.badRequest().body(new MessageResponse("Error: Email is already taken"));
        }
+
        System.out.println(this.users);
+
        if (this.users.size() != 0) {
            User lastEmp = this.users.get(this.users.size()-1);
            nextId = lastEmp.getId() + 1;
-
        }
+
        System.out.println(nextId);
-       signUpRequest.setId(nextId);
-       User user = new User(signUpRequest.getId(), signUpRequest.getFirstName(), encoder.encode(signUpRequest.getPassword()), signUpRequest.getEmail(), signUpRequest.getLastName(), signUpRequest.getTelefon(), signUpRequest.getCnp(), signUpRequest.getTipCont());
-       user.setId(nextId);
+       System.out.println(signUpRequest.getFirstName());
+       System.out.println(signUpRequest.getTipCont());
+
+       User newuser = new User(nextId, signUpRequest.getFirstName(), encoder.encode(signUpRequest.getPassword()), signUpRequest.getEmail(), signUpRequest.getLastName(), signUpRequest.getTelefon(), signUpRequest.getCnp(), signUpRequest.getTipCont());
+
        String role = signUpRequest.getTipCont();
-       user.setTipCont(role);
-       this.users.add(user);
-       service.saveUser(user);
+
+       newuser.setTipCont(role);
+
+       System.out.println(newuser);
+
+       this.users.add(newuser);
+       service.saveUser(newuser);
        return ResponseEntity.ok(new MessageResponse("User is registered"));
     }
+
+    /*
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public List<User> deleteUser(@PathVariable Long id) {
         for(Iterator<User> itr=this.users.iterator();itr.hasNext();)
@@ -106,7 +103,8 @@ public class UserController {
             }
         }
         return this.users;
-    }
+    } */
+
     @RequestMapping(value="/login",method = RequestMethod.POST)
     @CrossOrigin(origins="http://localhost:4200")
     public ResponseEntity<?> loginUser(@RequestBody LoginRequest loginRequest){
@@ -116,8 +114,6 @@ public class UserController {
         UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
         List<String> roles = userDetails.getAuthorities().stream().map(item -> item.getAuthority()).collect(Collectors.toList());
         return ResponseEntity.ok(new JwtResponse(jwt,userDetails.getId(),userDetails.getEmail(),userDetails.getTipCont()));
-
     }
-
 
 }
