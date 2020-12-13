@@ -52,6 +52,7 @@ public class UserController {
     public List<User> getUsers() {
         return this.users;
     }
+
     @RequestMapping(value = "/{_id}", method = RequestMethod.GET)
     public User getUser(@PathVariable("_id") Long id) {
         return this.users.stream().filter(emp -> emp.getId() == id).findFirst().orElse(null);

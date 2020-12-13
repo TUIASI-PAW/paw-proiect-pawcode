@@ -5,12 +5,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document("destinatii")
 public class Destinatie {
     private String locatie;
-    private String proprietatiDisponibile;
+    private int proprietatiDisponibile;
     private String image;
 
     public Destinatie(){}
 
-    public Destinatie( String locatie,String proprietatiDisponibile, String image)
+    public Destinatie( String locatie,int proprietatiDisponibile, String image)
     {
         this.locatie = locatie;
         this.image = image;
@@ -24,7 +24,7 @@ public class Destinatie {
     {
         return this.image;
     }
-    public String getProprietatiDisponibile()
+    public int getProprietatiDisponibile()
     {
         return this.proprietatiDisponibile;
     }
@@ -37,13 +37,13 @@ public class Destinatie {
     {
         this.image = image;
     }
-    public void setProprietatiDisponibile(String proprietatiDisponibile)
+    public void setProprietatiDisponibile(int proprietatiDisponibile)
     {
         this.proprietatiDisponibile =proprietatiDisponibile;
     }
     @Override
     public String toString()
     {
-        return String.format("Destinatie[locatie=%s, proprietatiDisponibile=%s, imagine=%s]",locatie, proprietatiDisponibile, image);
+        return String.format("Destinatie[lacatie=%s, proprietatiDisponibile=%s, imagine=%s]",locatie, proprietatiDisponibile, image);
     }
 }
