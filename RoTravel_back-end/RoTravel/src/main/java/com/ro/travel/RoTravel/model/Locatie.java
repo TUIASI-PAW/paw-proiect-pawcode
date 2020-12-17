@@ -2,7 +2,7 @@ package com.ro.travel.RoTravel.model;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
+@Document(collection = "locatii")
 public class Locatie {
     private String locatie;
     private String numeOferta;
