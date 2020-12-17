@@ -31,6 +31,10 @@ const routes: Routes = [
     component:HomeComponent,
     pathMatch:'full'
 
+  },
+  {
+    path:'rezervari',
+    loadChildren:() => import('./rezervari/rezervari.module').then(mod => mod.RezervariModule)
   }
 ];
 
