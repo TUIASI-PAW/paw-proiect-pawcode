@@ -1,0 +1,48 @@
+.bg1 { 
+    /* The image used */
+    background-image: url('/assets/images/rezervari.jpg');
+  
+    /* Full height */
+    height: 100vh !important; 
+
+     margin-top:30px;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+ 
+.view
+{ 
+    width: 1000px;
+    height: 650px;
+    margin-top: 100px;
+    margin-right: 40px;
+    margin-left: 100px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: black;
+    opacity: 0.6;
+    color: white;
+}
+.vizualizare
+{
+    margin-top: 20px;
+    height: 100vh !important;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-right: 40px;
+    margin-left: 200px;
+    margin-top: 3rem!important;
+}
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.flex-container > div{
+    margin:10px;
+    padding:15px;
+}
