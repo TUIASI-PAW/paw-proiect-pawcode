@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { UtilizatoriModule } from 'src/app/utilizatori/utilizatori.module';
 import { UtilizatoriService } from 'src/app/utilizatori/utilizatori.service';
+import {TokenStorageService} from '../../_services/token-storage.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-vizualizare-oferte',
@@ -20,7 +22,8 @@ export class VizualizareOferteComponent implements OnInit {
   locatieSelectata:boolean;
   ofertaSelectata:boolean;
   isAuthenticated:boolean;
-  constructor(private httpService: HttpClient, private _userService:UtilizatoriService) { 
+  private role:string;
+  constructor(private httpService: HttpClient, private token:TokenStorageService, private _route:Router) { 
   
   }
  
@@ -56,7 +59,14 @@ export class VizualizareOferteComponent implements OnInit {
     this.locatieSelectata = false;
     this.numeOfertaSelectata = numeofertaSelectata;
     console.log(this.numeOfertaSelectata);
-    this.isAuthenticated = this._userService.getAuthenticated();
+    this.isAuthenticated = !!this.token.getToken();
+    if(this.isAuthenticated)
+    {
+      const user = this.token.getUser();
+      this.role = user.tipCont;
+
+      
+    }
     console.log(this.isAuthenticated);
     
     //trebuie citit din json doar oferta selectata din html.
@@ -67,4 +77,5 @@ export class VizualizareOferteComponent implements OnInit {
     },
   )
   }
+
 }
