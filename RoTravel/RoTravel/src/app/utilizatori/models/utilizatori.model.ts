@@ -7,7 +7,8 @@ export class User  {
     password: string;
     cnp: string;
     telefon: string;
+    rezervari:[];
     contstructor(){
-        
+        this.rezervari=[];
     }
 }
