@@ -5,7 +5,9 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.IndexDirection;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.thymeleaf.standard.inline.StandardHTMLInliner;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 @Document(collection = "users")
 public class User {
@@ -21,8 +23,8 @@ public class User {
     private String cnp;
 
     private String tipCont;
-
-    public User(long id, String firstName,String password, String email, String lastName, String telefon, String cnp, String tipCont) {
+    private ArrayList<Rezervare> rezervari;
+    public User(long id, String firstName, String password, String email, String lastName, String telefon, String cnp, String tipCont, ArrayList<Rezervare> rezervari) {
         super();
         this.id = id;
         this.firstName = firstName;
@@ -32,6 +34,7 @@ public class User {
         this.cnp = cnp;
         this.tipCont = tipCont;
         this.email = email;
+        this.rezervari = rezervari;
     }
     public long getId() {
         return id;
@@ -57,6 +60,7 @@ public class User {
     public String getEmail() {
         return email;
     }
+    public ArrayList<Rezervare> getRezervari(){return rezervari;}
 
     public void setId(Long id) {
         this.id = id;
@@ -82,7 +86,7 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
-
+    public void setRezervari(ArrayList<Rezervare> rezervari){ this.rezervari = rezervari;}
     public Object[] toObjectArray() {
         return new Object[] { firstName,lastName, password, email };
     }
