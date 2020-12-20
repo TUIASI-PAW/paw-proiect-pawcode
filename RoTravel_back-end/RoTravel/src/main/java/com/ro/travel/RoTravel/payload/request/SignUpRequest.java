@@ -8,8 +8,8 @@ public class SignUpRequest {
     private String	email;
     private String telefon;
     private String cnp;
-
     private String tipCont;
+
 
     public String getFirstName() {
         return firstName;
