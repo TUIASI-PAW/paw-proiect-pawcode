@@ -29,4 +29,9 @@ export class AuthService {
     return this.http.post(AUTH_API+'signup',
       user,httpOptions);
   }
+
+  booking(rezervare):Observable<any>{
+    return this.http.put(AUTH_API+'rezervare',
+    rezervare,httpOptions);
+  }
 }
