@@ -1,5 +1,6 @@
 package com.ro.travel.RoTravel.service;
 
+import com.ro.travel.RoTravel.model.Rezervare;
 import com.ro.travel.RoTravel.model.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -23,10 +24,10 @@ public class UserDetailsImpl implements UserDetails {
     private String cnp;
 
     private String tipCont;
-
+    private ArrayList<Rezervare> rezervari;
     private Collection<? extends GrantedAuthority> authorities;
 
-    public UserDetailsImpl(long id,String firstName,String password, String email, String lastName, String telefon, String cnp, String tipCont, Collection<? extends GrantedAuthority> authorities){
+    public UserDetailsImpl(long id,String firstName,String password, String email, String lastName, String telefon, String cnp, String tipCont, ArrayList<Rezervare> rezervari,Collection<? extends GrantedAuthority> authorities){
         this.firstName = firstName;
         this.lastName=lastName;
 
@@ -37,8 +38,9 @@ public class UserDetailsImpl implements UserDetails {
 
         this.tipCont=tipCont;
         this.id = id;
-
+        this.rezervari = rezervari;
        this.authorities =authorities;
+
     }
 
     public static UserDetailsImpl build(User user)
@@ -56,6 +58,7 @@ public class UserDetailsImpl implements UserDetails {
                 user.getTelefon(),
                 user.getCnp(),
                 user.getTipCont(),
+                user.getRezervari(),
                 authorities);
     }
 
@@ -78,6 +81,7 @@ public class UserDetailsImpl implements UserDetails {
     public String getLastName() {
         return lastName;
     }
+    public ArrayList<Rezervare> getRezervari() {return rezervari;}
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -101,6 +105,7 @@ public class UserDetailsImpl implements UserDetails {
     public String getTipCont() {
         return tipCont;
     }
+
 
     @Override
     public boolean isAccountNonExpired() {
@@ -135,6 +140,7 @@ public class UserDetailsImpl implements UserDetails {
                 Objects.equals(telefon, that.telefon) &&
                 Objects.equals(cnp, that.cnp) &&
                 Objects.equals(tipCont, that.tipCont) &&
+                Objects.equals(rezervari,that.rezervari) &&
                 Objects.equals(authorities, that.authorities);
     }
 }

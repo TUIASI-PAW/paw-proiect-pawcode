@@ -1,5 +1,6 @@
 package com.ro.travel.RoTravel.service;
 
+import com.ro.travel.RoTravel.model.Locatie;
 import com.ro.travel.RoTravel.repository.*;
 import com.ro.travel.RoTravel.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,4 +32,8 @@ public class Service implements UserDetailsService {
 
         return UserDetailsImpl.build(user);
     }
+    public User updateUser(User user){
+        userRepo.delete(user);
+        return userRepo.insert(user);}
+
 }
