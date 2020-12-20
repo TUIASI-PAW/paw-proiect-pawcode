@@ -1,8 +1,27 @@
 <div class="bg1">
     <div class="vizualizare">
         <div class="view">
-            <div class="flex-container">
-                
+            <div class="flex-content">
+                <div >
+                    <ng-container *ngFor="let r of rezervari">
+                        <div class="flex-container">
+                            <div class="div-img">
+                            <img [src]="r.imagine" width= "275" height= "183">
+                            </div>
+                            <div class = "detalii">
+                            <div class = "div-name">
+                                <h3>{{r.nume}}</h3>
+                            </div>
+                            <div class="div-price">
+                                <p>Pret: {{r.pret}}</p>
+                            </div>
+                            <div class = "div-rez">
+                                <button class="button-rezervare">ANULARE REZERVARE</button>
+                            </div>        
+                            </div>
+                        </div>
+                    </ng-container>
+                </div>
             </div>
         </div>
     </div>

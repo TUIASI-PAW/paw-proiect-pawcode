@@ -1,11 +1,11 @@
 .bg1 { 
     /* The image used */
-    background-image: url('/assets/images/rezervari.jpg');
+    /*background-image: url('/assets/images/rezervari.jpg');*/
   
     /* Full height */
-    height: 100vh !important; 
+    object-fit: cover;
 
-     margin-top:30px;
+    margin-top:30px;
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
@@ -15,21 +15,22 @@
  
 .view
 { 
-    width: 1000px;
-    height: 650px;
+    width: 1100px;
+    object-fit: cover;
     margin-top: 100px;
     margin-right: 40px;
-    margin-left: 100px;
+    margin-left: 40px;
     border-radius: 20px;
     text-align: center;
-    background-color: black;
-    opacity: 0.6;
-    color: white;
+    background-color: #91bdd9;
+    color: black;
+    margin-bottom: 50px;
 }
 .vizualizare
 {
+    width: max-content;
     margin-top: 20px;
-    height: 100vh !important;
+    object-fit: cover;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -37,12 +38,78 @@
     margin-left: 200px;
     margin-top: 3rem!important;
 }
+.flex-content{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
 .flex-container{
+    border: double rgb(39, 24, 124);
+    border-radius: 10px;
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.div-img
+{
+    margin:50px;
+}
+.div-price
+{
+    
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+}
+
+.div-name
+{
+    width: 50px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
 }
-.flex-container > div{
-    margin:10px;
-    padding:15px;
+
+
+.button-rezervare
+{
+    margin-top:20px;
+    background-color: #0045cf;
+    color:white;
 }
+
+.button-rezervare:hover
+{
+    background-color: red;
+}
+.detalii
+{
+    margin-top:50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.detalii>div
+{
+    margin-top:40px;
+    margin-right: 60px;
+    margin-left: 60px;
+}
+
+.div-rez
+{
+    margin-top:40px;
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
