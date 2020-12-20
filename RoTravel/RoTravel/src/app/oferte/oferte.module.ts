@@ -12,6 +12,7 @@ import { VizualizareOferteComponent } from './vizualizare-oferte/vizualizare-ofe
   imports: [
     CommonModule,
     OferteRoutingModule
+    
   ]
   
 })

@@ -33,7 +33,9 @@
                             <p>Descriere: {{oferta.descriere}}</p>
                         </div>
                         <div *ngIf="isAuthenticated">
-                            <button class = "btn btn-indigo waves-effect waves-light buton buton_rezervare">Rezervă</button>
+                            <div (click)="onClickRezervare(oferta.numeOferta, oferta.pret, oferta.imagine)">
+                                <button class = "btn btn-indigo waves-effect waves-light buton buton_rezervare">Rezervă</button>
+                            </div>
                         </div> 
                 </ng-container>
             </div>

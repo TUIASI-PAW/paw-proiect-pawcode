@@ -16,12 +16,10 @@ const routes: Routes = [
     component:VizualizareOferteComponent,
     pathMatch:'full'
   }
-  
-  
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes)] ,
   exports: [RouterModule]
 })
 export class OferteRoutingModule { }

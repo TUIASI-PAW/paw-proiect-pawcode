@@ -3,7 +3,7 @@ import { Url } from 'url';
 export class Oferta {
     numeOferta:string;
     locatie:string;
-    pret:number;
+    pret:string;
     imagine:string;
     proprietar:string;
     descriere: string;
