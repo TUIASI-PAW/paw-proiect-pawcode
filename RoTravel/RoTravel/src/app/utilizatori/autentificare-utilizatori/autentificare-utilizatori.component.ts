@@ -38,19 +38,18 @@ onSubmit(form:NgForm){
       this.isLoggedIn = true;
       this.role = this.token.getUser().tipCont;
       this._route.navigate(['/oferte'])
+      .then(()=>{
+        window.location.reload();
+      });
   
   },
   error=>{
     this.isLoginFailed = false;
-    console.log("eroor on LogIn");
+    console.log("error on LogIn");
   }
 
   );
 
-}
-
-reloadPage():void{
-  window.location.reload();
 }
 
 }

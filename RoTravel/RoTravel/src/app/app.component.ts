@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {TokenStorageService} from './_services/token-storage.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class AppComponent implements OnInit {
   isAuthenticated = false;
   title = 'RoTravel';
 
-  constructor(private token:TokenStorageService){}
+  constructor(private token:TokenStorageService, private _route:Router){}
 
   ngOnInit():void{
 
@@ -21,8 +22,14 @@ export class AppComponent implements OnInit {
     {
       const user = this.token.getUser();
       this.role = user.tipCont;
-
-      
     }
+  }
+
+  logout():void{
+    this.token.signOut();
+    this._route.navigate(['/home'])
+      .then(()=>{
+        window.location.reload();
+      });
   }
 }

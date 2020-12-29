@@ -5,9 +5,10 @@
         <ul class="nav navbar-nav dist" routerLinkActive="active">
             <li class="nav-item "><a class="nav-link menu" routerLink="home"><b>Home</b></a></li>
             <li class="nav-item "><a class="nav-link menu" routerLink="oferte">Oferte</a></li>
-            <li class="nav-item "><a class="nav-link menu" routerLink="utilizatori">Autentificare</a></li>
-            <li class="nav-item "><a class="nav-link menu" routerLink="utilizatori/new">Inregistrare</a></li>
+            <li class="nav-item " *ngIf="!isAuthenticated"><a class="nav-link menu" routerLink="utilizatori">Autentificare</a></li>
+            <li class="nav-item " *ngIf="!isAuthenticated"><a class="nav-link menu" routerLink="utilizatori/new">Inregistrare</a></li>
             <li class="nav-item" *ngIf="isAuthenticated"><a class="nav-link menu" routerLink="rezervari">Rezervarile Tale</a></li>
+            <li class="nav-item" *ngIf="isAuthenticated"><a class="nav-link menu" routerLink="home" (click)="logout()">Deconectare</a></li>
         </ul>
     </div>
 </nav>
