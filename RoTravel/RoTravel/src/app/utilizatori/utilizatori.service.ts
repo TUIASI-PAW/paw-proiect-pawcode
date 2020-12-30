@@ -15,8 +15,8 @@ export class UtilizatoriService{
     private authenticated = false;
     constructor(private httpClient: HttpClient){}
 
-    get(): Observable<User[]>{
-        return this.httpClient.get<User[]>(this.url);
+    public getUsers(user: User): Observable<User[]>{
+        return this.httpClient.get<User[]>("http://localhost:8080/api/utilizatori");
     }
 
     save(utilizatori: User): Observable<any>{
@@ -27,6 +27,7 @@ export class UtilizatoriService{
     {
         return this.httpClient.delete('${this.url}/${id}');
     }
+
     public loginUserFromRemote(user:User):Observable<any>{
 
        return this.httpClient.post<any>("http://localhost:8080/api/utilizatori/login",user)

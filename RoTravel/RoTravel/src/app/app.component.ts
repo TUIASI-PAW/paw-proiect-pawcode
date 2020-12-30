@@ -11,6 +11,7 @@ import {TokenStorageService} from './_services/token-storage.service';
 export class AppComponent implements OnInit {
   private role:string;
   isAuthenticated = false;
+  isAdmin = false;
   title = 'RoTravel';
 
   constructor(private token:TokenStorageService, private _route:Router){}
@@ -21,7 +22,15 @@ export class AppComponent implements OnInit {
     if(this.isAuthenticated)
     {
       const user = this.token.getUser();
-      this.role = user.tipCont;
+      this.role = user.role;
+      if(this.role==="admin")
+      {
+        this.isAdmin=true;
+      }
+      else
+      {
+        this.isAdmin = false;
+      }
     }
   }
 

@@ -1,13 +1,95 @@
-.div-gestionare
-{
-    width: 1050px;
-    height: 700px;
-    margin-top: 70px;
-    margin-right: 30px;
-    margin-left: 230px;
+.bg1 { 
+    /* The image used */
+    /*background-image: url('/assets/images/rezervari.jpg');*/
+  
+    /* Full height */
+    object-fit: cover;
+
+    margin-top:30px;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+.view
+{ 
+    width: 1100px;
+    object-fit: cover;
+    margin-top: 100px;
+    margin-right: 40px;
+    margin-left: 40px;
     border-radius: 20px;
     text-align: center;
-    background-color: rgb(231, 227, 227);
+    background-color: #91bdd9;
     color: black;
+    margin-bottom: 50px;
+}
+.vizualizare
+{
+    width: max-content;
+    margin-top: 20px;
+    object-fit: cover;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-right: 40px;
+    margin-left: 200px;
+    margin-top: 3rem!important;
+}
+.flex-content{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+.flex-container{
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
+.div-firstName
+{
+    width: 150px;
+    text-align: justify;
+    text-indent: 50px;
+}
+.div-lastName
+{
+    width: 200px;
+    text-align: justify;
+    text-indent: 50px;
+}
+.div-email
+{
+    width: 300px;
+    text-align: justify;
+    text-indent: 50px;
+}
+.div-cont
+{
+    text-align: justify;
+    text-indent: 50px;
+}
+
+
+.button-stergere
+{
+    background-color: #0045cf;
+    color:white;
+}
+
+.button-stergere:hover
+{
+    
+    background-color: red;
+}
+.div-stergere
+{
+    margin-left: auto; 
+    margin-right: 200;
+}
