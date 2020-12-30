@@ -34,4 +34,9 @@ export class AuthService {
     return this.http.put(AUTH_API+'rezervare',
     rezervare,httpOptions);
   }
+  delete(user):Observable<any>{
+    console.log(user);
+    return this.http.put(AUTH_API+'delete',
+    user, httpOptions);
+  }
 }

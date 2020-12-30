@@ -5,7 +5,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.ro.travel.RoTravel.model.Locatie;
 import com.ro.travel.RoTravel.model.Rezervare;
 import com.ro.travel.RoTravel.payload.request.LoginRequest;
 import com.ro.travel.RoTravel.payload.request.BookingRequest;
@@ -19,7 +18,6 @@ import com.ro.travel.RoTravel.model.User;
 import com.ro.travel.RoTravel.service.UserDetailsImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -142,6 +140,16 @@ public class UserController {
         this.service.updateUser(u);
         System.out.println(temp.size());
         return ResponseEntity.ok(new MessageResponse("Rezervarea a fost adaugata"));
+    }
+
+    @PutMapping("/delete")
+    @CrossOrigin(origins="http://localhost:4200")
+    public ResponseEntity<?> deleteUser(@RequestBody User deleteRequest)
+    {
+        User u= userRepository.findByFirstNameAndLastNameAndEmailAndTipCont(deleteRequest.getFirstName(), deleteRequest.getLastName(), deleteRequest.getEmail(), deleteRequest.getTipCont());
+        System.out.println(u);
+        userRepository.delete(u);
+        return ResponseEntity.ok(new MessageResponse("User sters!!!"));
     }
 
     @RequestMapping(value="/rezervari/{email}",method = RequestMethod.GET)

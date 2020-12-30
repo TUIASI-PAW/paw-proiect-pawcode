@@ -17,8 +17,10 @@
                             <div class="div-cont">
                                 <p>Cont: {{u.tipCont}}</p>
                             </div>
-                            <div class = "div-stergere">
-                                <button class="button-stergere">Sterge</button>
+                            <div class = "div-stergere" > 
+                                <div (click)="onClickStergere(u.firstName, u.lastName, u.email, u.tipCont, u.id, u.password, u.cnp, u.telefon, u.rezervari)">
+                                    <button class="button-stergere">Sterge</button>
+                                </div>
                             </div>        
                         </div>
                     </ng-container>
