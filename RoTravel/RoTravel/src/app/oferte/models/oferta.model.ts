@@ -7,5 +7,4 @@ export class Oferta {
     imagine:string;
     proprietar:string;
     descriere: string;
-    disponibilitate: Date;
 }

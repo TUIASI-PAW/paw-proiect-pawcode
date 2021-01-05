@@ -1,22 +1,27 @@
 <div class="form-style-3">
-    <form>
-        <fieldset class='field'>
-            <legend>Oferta</legend>
-            <label for="field1"><span>Locatie <span class="required">*</span></span><input type="text" class="input-field"
-                    name="field1" value="" /></label>
-            <label for="field2"><span>Nume Oferta <span class="required">*</span></span><input type="email"
-                    class="input-field" name="field2" value="" /></label>
-            <label for="field3"><span>Oferta <span class="required">*</span></span><input type="text" class="input-field"
-                    name="field3" value="" /></label>
-            <label for="field3"><span>Imagine <span class="required">*</span></span><input #imageInput type="file" accept="image/*">
-            </label>
-        </fieldset>
-        <fieldset class='field'>
-            <legend>Descriere</legend>
-            <label for="field6"><span>Descriere <span class="required">*</span></span><textarea name="field6"
-                    class="textarea-field"></textarea></label>
-            <label><span> </span>
-                <input type="submit" value="Submit" /></label>
-        </fieldset>
-    </form>
+        <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+                <fieldset class='field'>
+                        <legend>Oferta</legend>
+                        <label for="field1"><span>Locatie <span class="required">*</span></span>
+                                <input type = "text" name = "locatie" class = "input-field" [(ngModel)] = "oferta.locatie" required name = "string" />
+                        </label>
+                        <label for="field2"><span>Nume Oferta <span class="required">*</span></span>
+                                <input type="text" class="input-field" name="numeOferta" value=""
+                                [(ngModel)] = "oferta.numeOferta" required name = "string"  />
+                        </label>
+                        <label for="field3"><span>Oferta <span class="required">*</span></span>
+                                <input type="text" class="input-field" name="field3" value="" [(ngModel)] = "oferta.pret" />
+                        </label>
+                        <label for="field3"><span>Imagine <span class="required">*</span></span>
+                                <input type="file" (change)="onFileChanged($event)" name="imagine" [(ngModel)] = "oferta.imagine"/> 
+                        </label>
+                </fieldset>
+                <fieldset class='field'>
+                        <legend>Descriere</legend>
+                        <label for="field6"><span>Descriere <span class="required">*</span></span><textarea
+                                        name="field6" class="textarea-field" [(ngModel)] = "oferta.descriere" ></textarea></label>
+                        <label><span> </span>
+                                <button type = "submit">Submit</button></label>
+                </fieldset>
+        </form>
 </div>

@@ -98,20 +98,6 @@ public class UserController {
        return ResponseEntity.ok(new MessageResponse("User is registered"));
     }
 
-    /*
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public List<User> deleteUser(@PathVariable Long id) {
-        for(Iterator<User> itr=this.users.iterator();itr.hasNext();)
-        {
-            User emp = itr.next();
-            Long inId = emp.getId();
-            if(inId == (id)){
-                itr.remove();
-            }
-        }
-        return this.users;
-    } */
-
     @RequestMapping(value="/login",method = RequestMethod.POST)
     @CrossOrigin(origins="http://localhost:4200")
     public ResponseEntity<?> loginUser(@RequestBody LoginRequest loginRequest){

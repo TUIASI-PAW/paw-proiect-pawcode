@@ -2,16 +2,15 @@ package com.ro.travel.RoTravel.controller;
 
 import com.ro.travel.RoTravel.model.Locatie;
 import com.ro.travel.RoTravel.model.User;
+import com.ro.travel.RoTravel.payload.request.BookingRequest;
+import com.ro.travel.RoTravel.payload.response.MessageResponse;
 import com.ro.travel.RoTravel.repository.LocatieRepository;
 import com.ro.travel.RoTravel.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
@@ -42,6 +41,16 @@ public class LocatieController {
         return locatieRepository.findByNumeOferta(numeOferta);
     }
 
+    @PutMapping("/oferta/adauga")
+    @CrossOrigin(origins="http://localhost:4200")
+    public ResponseEntity<?> adaugaOferta(@RequestBody Locatie locatie) {
+        locatii = locatieRepository.findAll();
+
+        Locatie loc = new Locatie(locatie.getLocatie(), locatie.getNumeOferta(),locatie.getPret(), locatie.getImagine(), locatie.getDescriere());
+        this.locatii.add(loc);
+        locatieRepository.save(loc);
+        return ResponseEntity.ok(new MessageResponse("Oferta a fost adaugata"));
+    }
     @RequestMapping(value = "/{_id}", method = RequestMethod.DELETE)
     public boolean deleteLocatie(@PathVariable("_id") String _id) {
         try {

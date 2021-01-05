@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 
 //se trimit cereri http catre backend pentru login si signup
 const AUTH_API="http://localhost:8080/api/utilizatori/";
+const LOCATIE_API="http://localhost:8080/api/locatie/"
 
 const httpOptions={
   headers: new HttpHeaders({'Content-Type':'application/json'})
@@ -33,6 +34,10 @@ export class AuthService {
   booking(rezervare):Observable<any>{
     return this.http.put(AUTH_API+'rezervare',
     rezervare,httpOptions);
+  }
+  AdaugaOferta(oferta):Observable<any>{
+    return this.http.put(LOCATIE_API+'oferta/adauga',
+    oferta,httpOptions);
   }
   delete(user):Observable<any>{
     console.log(user);

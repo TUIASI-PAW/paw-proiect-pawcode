@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
   private role:string;
   isAuthenticated = false;
   isAdmin = false;
+  isProprietar = false;
   title = 'RoTravel';
 
   constructor(private token:TokenStorageService, private _route:Router){}
@@ -30,6 +31,15 @@ export class AppComponent implements OnInit {
       else
       {
         this.isAdmin = false;
+      }
+
+      if(this.role==="proprietar")
+      {
+        this.isProprietar=true;
+      }
+      else
+      {
+        this.isProprietar = false;
       }
     }
   }
