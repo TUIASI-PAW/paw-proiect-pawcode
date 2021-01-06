@@ -16,4 +16,11 @@ export class OferteService {
 
     return this.httpClient.get<Oferta[]>(this.url);
   }
+
+  getDestinatii():Observable<any>{
+    return this.httpClient.get<any>("http://localhost:8080/api/destinatie")
+}
+getLocatii(numeLocatie):Observable<any>{
+  return this.httpClient.get<any>("http://localhost:8080/api/locatie/"+numeLocatie)
+}
 }

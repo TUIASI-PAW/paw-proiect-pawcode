@@ -4,10 +4,10 @@
             <div *ngIf ="destinatieSelectata">
                 <div class="flex-container">
                     <ng-container *ngFor="let locatie of locatii">
-                        <div (click)="onClickDestination(locatie.Localitate)">
+                        <div (click)="onClickDestination(locatie.locatie)">
                             <img [src]="locatie.image" width= "275" height= "183">
-                            <h3>{{locatie.Localitate}}</h3>
-                            <h4>Proprietăți disponibile: {{locatie.ProprietatiDisponibile}}</h4>
+                            <h3>{{locatie.locatie}}</h3>
+                            <h4>Proprietăți disponibile: {{locatie.proprietatiDisponibile}}</h4>
                         </div>
                     </ng-container>
                 </div>

@@ -8,3 +8,8 @@ export class Oferta {
     proprietar:string;
     descriere: string;
 }
+export class Destinatie {
+    locatie:string;
+    proprietatiDisponibile:string;
+    imagine:string;
+}

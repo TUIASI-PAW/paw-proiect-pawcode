@@ -26,12 +26,14 @@ public class LocatieController {
     {}
 
     @RequestMapping(method = RequestMethod.GET)
+    @CrossOrigin(origins = "*")
     public List<Locatie> getLocatii() {
         locatii = locatieRepository.findAll();
         return this.locatii;
     }
 
     @RequestMapping(value = "/{_locatie}", method = RequestMethod.GET)
+    @CrossOrigin(origins = "*")
     public List<Locatie>  getLocatiiBylocatie(@PathVariable("_locatie") String _locatie) {
         return locatieRepository.findAllByLocatie(_locatie);
     }

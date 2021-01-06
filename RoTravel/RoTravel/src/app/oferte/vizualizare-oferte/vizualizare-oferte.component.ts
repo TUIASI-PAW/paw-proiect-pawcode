@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import { UtilizatoriModule } from 'src/app/utilizatori/utilizatori.module';
-import { UtilizatoriService } from 'src/app/utilizatori/utilizatori.service';
 import {TokenStorageService} from '../../_services/token-storage.service';
 import { Router } from '@angular/router';
 import { Rezervari } from 'src/app/rezervari/models/rezervari.model';
 import {AuthService} from '../../_services/auth.service';
 import {User} from 'src/app/utilizatori/models'
+import { OferteService } from '../oferte.service';
+import { Destinatie, Oferta } from '../models';
 
 @Component({
   selector: 'app-vizualizare-oferte',
@@ -16,9 +16,9 @@ import {User} from 'src/app/utilizatori/models'
 export class VizualizareOferteComponent implements OnInit {
   user =new User()
   rezervare:Rezervari;
-  locatii:string [];
-  oferte: string[];
-  oferta: string;
+  locatii:Destinatie [];
+  oferte: Oferta[];
+  oferta: Oferta;
   numeLocatie:string;
   numeOfertaSelectata:string;
   urlOferte:string;
@@ -28,7 +28,7 @@ export class VizualizareOferteComponent implements OnInit {
   ofertaSelectata:boolean;
   isAuthenticated:boolean;
   private role:string;
-  constructor(private httpService: HttpClient, private token:TokenStorageService, private _route:Router,private _authService:AuthService ) { 
+  constructor(private httpService: HttpClient, private token:TokenStorageService, private _route:Router,private _authService:AuthService, private _oferteService: OferteService) { 
   
   }
  
@@ -37,9 +37,9 @@ export class VizualizareOferteComponent implements OnInit {
     this.destinatieSelectata = true;
     this.ofertaSelectata = false;
     this.locatieSelectata = false;
-    this.httpService.get('./assets/destinatii.json').subscribe(
+    this._oferteService.getDestinatii().subscribe(
       locatie =>{
-        this.locatii = locatie as string [];
+        this.locatii = locatie;
       },
     )
     
@@ -52,9 +52,9 @@ export class VizualizareOferteComponent implements OnInit {
     this.numeLocatie = numeLocatie.split(" ").join("");
     console.log(this.numeLocatie);
     this.urlOferte = './assets/'+this.numeLocatie+'.json';
-    this.httpService.get(this.urlOferte).subscribe(
+    this._oferteService.getLocatii(numeLocatie).subscribe(
       oferta =>{
-        this.oferte = oferta as string [];
+        this.oferte = oferta;
       },
     )
   }
@@ -77,7 +77,7 @@ export class VizualizareOferteComponent implements OnInit {
     //trebuie citit din json doar oferta selectata din html.
   this.httpService.get(this.urlOferte).subscribe(
     oferta1 =>{
-      this.oferta = this.oferte.find(item => item['numeOferta']==numeofertaSelectata) as string;
+      this.oferta = this.oferte.find(item => item['numeOferta']==numeofertaSelectata);
       
     },
   )
