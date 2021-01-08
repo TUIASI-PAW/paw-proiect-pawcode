@@ -17,6 +17,7 @@ import com.ro.travel.RoTravel.service.Service;
 import com.ro.travel.RoTravel.model.User;
 import com.ro.travel.RoTravel.service.UserDetailsImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -24,6 +25,9 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
+
+import javax.print.attribute.standard.Media;
+import javax.print.attribute.standard.MediaTray;
 
 @RestController
 //@CrossOrigin(origins="*",maxAge=3600)
@@ -75,23 +79,14 @@ public class UserController {
            return ResponseEntity.badRequest().body(new MessageResponse("Error: Email is already taken"));
        }
 
-       System.out.println(this.users);
-
        if (this.users.size() != 0) {
            User lastEmp = this.users.get(this.users.size()-1);
            nextId = lastEmp.getId() + 1;
        }
-
-       System.out.println(nextId);
-       System.out.println(signUpRequest.getFirstName());
-       System.out.println(signUpRequest.getTipCont());
-
        User newuser = new User(nextId, signUpRequest.getFirstName(), encoder.encode(signUpRequest.getPassword()), signUpRequest.getEmail(), signUpRequest.getLastName(), signUpRequest.getTelefon(), signUpRequest.getCnp(), signUpRequest.getTipCont(), rezervari);
-
        String role = signUpRequest.getTipCont();
        newuser.setTipCont(role);
        newuser.setRezervari(rezervari);
-       System.out.println(newuser);
 
        this.users.add(newuser);
        service.saveUser(newuser);
@@ -123,23 +118,37 @@ public class UserController {
         return ResponseEntity.ok(new JwtResponse(jwt,userDetails.getId(),userDetails.getEmail(),userDetails.getTipCont()));
     }
     
-    @PutMapping("/rezervare")
+    @PutMapping(value = "/rezervare")
     @CrossOrigin(origins="http://localhost:4200")
     public ResponseEntity<?> addBooking(@RequestBody BookingRequest bookingRequest)
     {
-        System.out.println(bookingRequest.getPret());
-        System.out.println(bookingRequest.getNume());
-        System.out.println(bookingRequest.getEmail());
         User u = userRepository.findByEmail(bookingRequest.getEmail());
-
         Rezervare rezervare=new Rezervare(bookingRequest.getNume(),bookingRequest.getPret(), bookingRequest.getImagine(), bookingRequest.getEmail());
         ArrayList<Rezervare> temp=u.getRezervari();
         temp.add(rezervare);
-
         u.setRezervari(temp);
         this.service.updateUser(u);
-        System.out.println(temp.size());
         return ResponseEntity.ok(new MessageResponse("Rezervarea a fost adaugata"));
+    }
+
+    @PutMapping(value ="/rezervari")
+    @CrossOrigin(origins = "http://localhost:4200")
+    public ResponseEntity<?> cancelReservation(@RequestBody BookingRequest booking)
+    {
+        User u = userRepository.findByEmail(booking.getEmail());
+        Rezervare rezervare = new Rezervare(booking.getNume(), booking.getPret(), booking.getImagine(), booking.getEmail());
+        ArrayList<Rezervare> temp=u.getRezervari();
+        for( int i= 0; i <temp.size();i++)
+        {
+            if(temp.get(i).nume.equals(rezervare.nume) == true && temp.get(i).pret.equals(rezervare.pret) == true)
+            {
+                temp.remove(i);
+                System.out.println("Rezervare anulata!");
+            }
+        }
+        u.setRezervari(temp);
+        this.service.updateUser(u);
+        return ResponseEntity.ok(new MessageResponse("Rezervare "));
     }
 
     @PutMapping("/delete")
