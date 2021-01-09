@@ -13,21 +13,19 @@ import com.ro.travel.RoTravel.payload.response.JwtResponse;
 import com.ro.travel.RoTravel.payload.response.MessageResponse;
 import com.ro.travel.RoTravel.repository.UserRepository;
 import com.ro.travel.RoTravel.security.JwtUtils;
+import com.ro.travel.RoTravel.service.MailSend;
 import com.ro.travel.RoTravel.service.Service;
 import com.ro.travel.RoTravel.model.User;
 import com.ro.travel.RoTravel.service.UserDetailsImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
-
-import javax.print.attribute.standard.Media;
-import javax.print.attribute.standard.MediaTray;
 
 @RestController
 //@CrossOrigin(origins="*",maxAge=3600)
@@ -50,6 +48,10 @@ public class UserController {
 
     @Autowired
     private PasswordEncoder encoder;
+
+    @Autowired
+    private MailSend mailsend;
+
 
     UserController() {
     }
@@ -90,7 +92,18 @@ public class UserController {
 
        this.users.add(newuser);
        service.saveUser(newuser);
+        SimpleMailMessage mail = new SimpleMailMessage();
+        mail.setTo(newuser.getEmail());
+        mail.setFrom("rotravelbooking@gmail.com");
+        mail.setSubject("Echipa RoTravel");
+        mail.setText(newuser.getFirstName()+" "+newuser.getLastName()+" va multumim ca ati ales" +
+                " serviciile noastre.\nContul dumneavoastra "+newuser.getEmail()+" a fost creat cu succes!\n\nVa multumim,\nEchipa RoTravel");
+
+
+       mailsend.sendEmail(mail);
+
        return ResponseEntity.ok(new MessageResponse("User is registered"));
+
     }
 
     /*
@@ -128,6 +141,14 @@ public class UserController {
         temp.add(rezervare);
         u.setRezervari(temp);
         this.service.updateUser(u);
+        SimpleMailMessage mail = new SimpleMailMessage();
+        mail.setTo(rezervare.getEmail());
+        mail.setFrom("rotravelbooking@gmail.com");
+        mail.setSubject("Echipa RoTravel");
+        mail.setText("Rezervarea dumneavoastra a fost efectuata cu succes!\n\nVa asteptam cu drag!\n"+rezervare.getNume());
+
+
+        mailsend.sendEmail(mail);
         return ResponseEntity.ok(new MessageResponse("Rezervarea a fost adaugata"));
     }
 
