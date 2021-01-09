@@ -169,6 +169,15 @@ public class UserController {
         }
         u.setRezervari(temp);
         this.service.updateUser(u);
+        SimpleMailMessage mail = new SimpleMailMessage();
+        mail.setTo(rezervare.getEmail());
+        mail.setFrom("rotravelbooking@gmail.com");
+        mail.setSubject("Echipa RoTravel");
+        mail.setText("Rezervarea dumneavoastra a fost anulata!");
+
+
+        mailsend.sendEmail(mail);
+
         return ResponseEntity.ok(new MessageResponse("Rezervare "));
     }
 
