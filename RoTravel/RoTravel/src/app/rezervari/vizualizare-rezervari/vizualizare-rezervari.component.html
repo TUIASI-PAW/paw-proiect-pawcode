@@ -15,7 +15,7 @@
                             <div class="div-price">
                                 <p>Pret: {{r.pret}}</p>
                             </div>
-                            <div class = "div-rez">
+                            <div (click)="onClickAnulare(r.nume, r.pret, r.imagine)" class = "div-rez">
                                 <button class="button-rezervare">ANULARE REZERVARE</button>
                             </div>        
                             </div>

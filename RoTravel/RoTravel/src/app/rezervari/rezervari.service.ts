@@ -11,5 +11,9 @@ export class RezervariService {
   constructor(private httpClient: HttpClient) { }
   getBooking(user:User):Observable<any>{
     return this.httpClient.get<any>("http://localhost:8080/api/utilizatori/rezervari/"+user.email)
-}
+  }
+
+  cancelReservation(booking:Rezervari):Observable<any>{
+    return this.httpClient.put("http://localhost:8080/api/utilizatori/rezervari/", booking)
+  }
 }

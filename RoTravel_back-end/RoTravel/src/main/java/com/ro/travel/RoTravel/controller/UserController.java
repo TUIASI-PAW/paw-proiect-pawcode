@@ -13,11 +13,13 @@ import com.ro.travel.RoTravel.payload.response.JwtResponse;
 import com.ro.travel.RoTravel.payload.response.MessageResponse;
 import com.ro.travel.RoTravel.repository.UserRepository;
 import com.ro.travel.RoTravel.security.JwtUtils;
+import com.ro.travel.RoTravel.service.MailSend;
 import com.ro.travel.RoTravel.service.Service;
 import com.ro.travel.RoTravel.model.User;
 import com.ro.travel.RoTravel.service.UserDetailsImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -47,6 +49,10 @@ public class UserController {
     @Autowired
     private PasswordEncoder encoder;
 
+    @Autowired
+    private MailSend mailsend;
+
+
     UserController() {
     }
 
@@ -75,27 +81,29 @@ public class UserController {
            return ResponseEntity.badRequest().body(new MessageResponse("Error: Email is already taken"));
        }
 
-       System.out.println(this.users);
-
        if (this.users.size() != 0) {
            User lastEmp = this.users.get(this.users.size()-1);
            nextId = lastEmp.getId() + 1;
        }
-
-       System.out.println(nextId);
-       System.out.println(signUpRequest.getFirstName());
-       System.out.println(signUpRequest.getTipCont());
-
        User newuser = new User(nextId, signUpRequest.getFirstName(), encoder.encode(signUpRequest.getPassword()), signUpRequest.getEmail(), signUpRequest.getLastName(), signUpRequest.getTelefon(), signUpRequest.getCnp(), signUpRequest.getTipCont(), rezervari);
-
        String role = signUpRequest.getTipCont();
        newuser.setTipCont(role);
        newuser.setRezervari(rezervari);
-       System.out.println(newuser);
 
        this.users.add(newuser);
        service.saveUser(newuser);
+        SimpleMailMessage mail = new SimpleMailMessage();
+        mail.setTo(newuser.getEmail());
+        mail.setFrom("rotravelbooking@gmail.com");
+        mail.setSubject("Echipa RoTravel");
+        mail.setText(newuser.getFirstName()+" "+newuser.getLastName()+" va multumim ca ati ales" +
+                " serviciile noastre.\nContul dumneavoastra "+newuser.getEmail()+" a fost creat cu succes!\n\nVa multumim,\nEchipa RoTravel");
+
+
+       mailsend.sendEmail(mail);
+
        return ResponseEntity.ok(new MessageResponse("User is registered"));
+
     }
 
     @RequestMapping(value="/login",method = RequestMethod.POST)
@@ -109,23 +117,54 @@ public class UserController {
         return ResponseEntity.ok(new JwtResponse(jwt,userDetails.getId(),userDetails.getEmail(),userDetails.getTipCont()));
     }
     
-    @PutMapping("/rezervare")
+    @PutMapping(value = "/rezervare")
     @CrossOrigin(origins="http://localhost:4200")
     public ResponseEntity<?> addBooking(@RequestBody BookingRequest bookingRequest)
     {
-        System.out.println(bookingRequest.getPret());
-        System.out.println(bookingRequest.getNume());
-        System.out.println(bookingRequest.getEmail());
         User u = userRepository.findByEmail(bookingRequest.getEmail());
-
         Rezervare rezervare=new Rezervare(bookingRequest.getNume(),bookingRequest.getPret(), bookingRequest.getImagine(), bookingRequest.getEmail());
         ArrayList<Rezervare> temp=u.getRezervari();
         temp.add(rezervare);
-
         u.setRezervari(temp);
         this.service.updateUser(u);
-        System.out.println(temp.size());
+        SimpleMailMessage mail = new SimpleMailMessage();
+        mail.setTo(rezervare.getEmail());
+        mail.setFrom("rotravelbooking@gmail.com");
+        mail.setSubject("Echipa RoTravel");
+        mail.setText("Rezervarea dumneavoastra a fost efectuata cu succes!\n\nVa asteptam cu drag!\n"+rezervare.getNume());
+
+
+        mailsend.sendEmail(mail);
         return ResponseEntity.ok(new MessageResponse("Rezervarea a fost adaugata"));
+    }
+
+    @PutMapping(value ="/rezervari")
+    @CrossOrigin(origins = "http://localhost:4200")
+    public ResponseEntity<?> cancelReservation(@RequestBody BookingRequest booking)
+    {
+        User u = userRepository.findByEmail(booking.getEmail());
+        Rezervare rezervare = new Rezervare(booking.getNume(), booking.getPret(), booking.getImagine(), booking.getEmail());
+        ArrayList<Rezervare> temp=u.getRezervari();
+        for( int i= 0; i <temp.size();i++)
+        {
+            if(temp.get(i).nume.equals(rezervare.nume) == true && temp.get(i).pret.equals(rezervare.pret) == true)
+            {
+                temp.remove(i);
+                System.out.println("Rezervare anulata!");
+            }
+        }
+        u.setRezervari(temp);
+        this.service.updateUser(u);
+        SimpleMailMessage mail = new SimpleMailMessage();
+        mail.setTo(rezervare.getEmail());
+        mail.setFrom("rotravelbooking@gmail.com");
+        mail.setSubject("Echipa RoTravel");
+        mail.setText("Rezervarea dumneavoastra a fost anulata!");
+
+
+        mailsend.sendEmail(mail);
+
+        return ResponseEntity.ok(new MessageResponse("Rezervare "));
     }
 
     @PutMapping("/delete")
