@@ -23,7 +23,8 @@ export class AdaugareUtilizatoriComponent implements OnInit {
 
 
   onSubmit(form:NgForm){
-    this._authService.register(this.user).subscribe(
+    if((/^[a-zA-Z]+(-[a-zA-Z]+)*$/.test(this.user.firstName))&&(/^[a-zA-Z]+(-[a-zA-Z]+)*$/.test(this.user.lastName))&&(/^[0-9]*$/.test(this.user.cnp))&&(/^[0-9]*$/.test(this.user.telefon)))
+    {this._authService.register(this.user).subscribe(
       data=>{
         console.log(this.user);
         this.isSuccessful=true;
@@ -31,6 +32,10 @@ export class AdaugareUtilizatoriComponent implements OnInit {
         this._route.navigate(['/utilizatori'])
       }
       );
+    }
+    else{
+      window.alert("Date invalide!");
+    }
     }
   
   ngOnInit(): void {
